@@ -13,12 +13,12 @@ const RegisterComponent = () => {
         {
             name:"Instagram",
             icon:"https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png",
-            placeholder:"Enter IG handle"
+            placeholder:"enter ig handle."
         },
         {
             name:"Discord",
             icon:"https://www.freepnglogos.com/uploads/discord-logo-png/concours-discord-cartes-voeux-fortnite-france-6.png",
-            placeholder:"Enter Discord ID"
+            placeholder:"enter discord handle."
         }
     ]
 

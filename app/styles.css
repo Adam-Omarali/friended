@@ -12,19 +12,6 @@
     transform: translate(-50%, -50%); /* Center the image */
     max-width: 100%; /* Ensure image doesn't exceed container */
   }
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-.image-container {
-    position: relative;
-  }
-  
-  .landing-image {
-    position: absolute;
-    top: 25vw; /* Position from top */
-    left: 65%; /* Position from left */
-    transform: translate(-50%, -50%); /* Center the image */
-    max-width: 100%; /* Ensure image doesn't exceed container */
-  }
 
 body {
     margin: 0;
@@ -52,14 +39,11 @@ body {
     display: inline-block;
     padding: 1vw 5vw; /* Make the button larger */
     border-radius: 2vw;
-    padding: 1vw 5vw; /* Make the button larger */
-    border-radius: 2vw;
     text-decoration: none;
     background-color: #f8f8f8;
     color: #DA9CDF;
-    color: #DA9CDF;
     transition: background-color 0.3s, color 0.3s;
-    margin-top: 1vw;
+    margin-top: 2vw;
     margin-left: 10vw; 
     font-size: 2vw;
     font-weight: bolder;/* Add space below the middle */
@@ -80,21 +64,6 @@ body {
     margin-left: 10vw;
   }
   
-  .google-link {
-    display: inline-block;
-    padding: 1vw 5vw; 
-    border-radius: 2vw;
-    text-decoration: none;
-    background-color: #f8f8f8;
-    color: #DA9CDF;
-    transition: background-color 0.3s, color 0.3s;
-    margin-top: 2vw;
-    margin-left: 10vw; 
-    font-size: 2vw;
-    font-weight: bolder;
-  }
-
-  .google-link:hover,
   .login-link:hover {
     background-color: #DA9CDF;
     color: #ffffff;
