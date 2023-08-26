@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Messages from './messages';
-import './login.css'; // Import the new CSS file
+import { createClient } from '@supabase/supabase-js'
+import './login.css'; 
 
 export default function Login() {
   return (
