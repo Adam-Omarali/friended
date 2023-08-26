@@ -43,7 +43,7 @@ body {
     background-color: #f8f8f8;
     color: #DA9CDF;
     transition: background-color 0.3s, color 0.3s;
-    margin-top: 2vw;
+    margin-top: 1vw;
     margin-left: 10vw; 
     font-size: 2vw;
     font-weight: bolder;/* Add space below the middle */
@@ -64,6 +64,21 @@ body {
     margin-left: 10vw;
   }
   
+  .google-link {
+    display: inline-block;
+    padding: 1vw 5vw; 
+    border-radius: 2vw;
+    text-decoration: none;
+    background-color: #f8f8f8;
+    color: #DA9CDF;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 2vw;
+    margin-left: 10vw; 
+    font-size: 2vw;
+    font-weight: bolder;
+  }
+
+  .google-link:hover,
   .login-link:hover {
     background-color: #DA9CDF;
     color: #ffffff;
