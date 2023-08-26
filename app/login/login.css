@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: cent   er;
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg, #8a2be2, #ff66b2);
+    font-family: Poppins;
+    text-align: center; /* Adjusted max-width value */
+    margin: 0 auto;
+  }
+  
+
+.login-link {
+  display: inline-block;
+  padding: 0.5rem 1rem; /* Adjusted padding */
+  border-radius: 2rem;
+  text-decoration: none;
+  background-color: #f8f8f8;
+  color: #da9cdf;
+  transition: background-color 0.3s, color 0.3s;
+  position: absolute;
+  top: 1rem; /* Positioned from top */
+  left: 1rem; /* Positioned from left */
+  font-size: 18px; /* Adjusted font size */
+  font-weight: bolder;
+}
+
+.login-link:hover {
+  background-color: #da9cdf;
+  color: #ffffff;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.login-label {
+  color: #f8f8f8;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.login-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    background-color: #f8f8f8;
+    color: #da9cdf;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 25px;
+    font-weight: bolder;
+  }  
+
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f8f8f8; /* White background */
+    font-size: 16px;
+    color: #da9cdf; /* Theme color for text */
+    outline: none;
+  }
+  
+
+.login-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.login-button-signup,
+.login-button-signin {
+  background-color: #da9cdf;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.login-button-signup:hover,
+.login-button-signin:hover {
+  background-color: #c875b8;
+}

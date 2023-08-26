@@ -14,9 +14,9 @@ export default async function Index() {
   } = await supabase.auth.getUser()
 
   return (
-    <body className="w-full flex-center min-h-screen">
-      <div className="flex-center">
-        <Link href="/login" className="login-link">
+    <body >
+      <div >
+        <Link href="/register" className="login-link">
           Login
         </Link>
       </div>

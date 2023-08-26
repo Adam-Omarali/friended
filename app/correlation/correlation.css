@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #8a2be2, #ff66b2);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Poppins;
+  }
+  
+  body.min-h-screen {
+    min-height: 100vh;
+  }
+  
+  .flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-left: 1rem; /* Add some spacing to the left */
+  }
+  .product-name {
+    position: absolute;
+    top: 20px; /* Adjust top position */
+    left: 20px; /* Adjust left position */
+    color: #f8f8f8;
+    font-size: 40px;
+    font-weight: bolder;
+}
+  
+  .profile-link {
+    display: inline-block;
+    padding: 1rem 3rem; /* Make the button larger */
+    border-radius: 1.5rem;
+    text-decoration: none;
+    background-color: #f8f8f8;
+    color: #DA9CDF;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+
+  .description{
+    position: absolute;
+    top: 240px; /* Adjust top position */
+    left: 400px; /* Adjust left position */
+    color: #f8f8f8;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+
+  .searchContainer {
+    position: absolute;
+    top: 160px;
+    right: 275px;
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.searchInput {
+    padding: 1rem;
+    border: none;
+    border-radius: 2rem 0 0 2rem;
+    background-color: transparent;
+    font-size: 18px;
+    color: #333;
+    outline: none;
+    width: 800px; /* Adjusted width */
+}
+
+.searchButton {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0 2rem 2rem 0;
+    background-color: #DA9CDF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+    background-color: #C875B8;
+}
+  
+  .profile-link:hover {
+    background-color: #DA9CDF;
+    color: #ffffff;
+  }
+
+  .connect-link {
+    position: absolute;
+    display: inline-block;
+    padding: 1rem 3rem; /* Make the button larger */
+    border-radius: 1.5rem;
+    right: 450px;
+    top: 10px;
+    text-decoration: none;
+    background-color: #f8f8f8;
+    color: #DA9CDF;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.connect-link:hover {
+    background-color: #DA9CDF;
+    color: #ffffff;
+}
+.profile-link {
+    position: absolute;
+    display: inline-block;
+    padding: 1rem 3rem; /* Make the button larger */
+    border-radius: 1.5rem;
+    right: 200px;
+    top: 10px;
+    text-decoration: none;
+    background-color: #f8f8f8;
+    color: #DA9CDF;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.profile-link:hover {
+    background-color: #DA9CDF;
+    color: #ffffff;
+}
+
+.searchContainer {
+    position: absolute;
+    top: 160px;
+    right: 275px;
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.searchInput {
+    padding: 1rem;
+    border: none;
+    border-radius: 2rem 0 0 2rem;
+    background-color: transparent;
+    font-size: 18px;
+    color: #333;
+    outline: none;
+    width: 800px;
+}
+
+.searchButton {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0 2rem 2rem 0;
+    background-color: #DA9CDF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+    background-color: #C875B8;
+}
+
+.match-container {
+    position: absolute;
+    top: 70%; /* Center vertically */
+    left: 51.5%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center properly */
+    display: flex;
+    gap: 20px;
+}
+
+.profile-image {
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    right: 40px; /* Adjust right position */
+}
+/* correlation.css */
+.match {
+    display: grid; /* Use CSS Grid for the layout */
+    grid-template-rows: auto 1fr; /* Divide the grid into two rows */
+    align-items: center;
+    background-color: #a3a1a1;
+    border-radius: 25px;
+    padding: 30px;
+    margin-right: 40px;
+    width: 300px;
+}
+
+.match-picture {
+    width: 100px;
+    height: 100px;
+    justify-self: center; /* Center the profile picture horizontally */
+}
+
+.match-link-icon {
+    justify-self: end; /* Align the link icon to the right */
+    width: 25px;
+    height: 25px;
+}
+
+.match-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.match-name {
+    color: #f8f8f8;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 0.5rem;
+}
+
+.match-percentage {
+    color: #DA9CDF;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 0.5rem;
+}
