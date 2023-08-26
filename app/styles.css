@@ -1,12 +1,14 @@
 /* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --font-poppins: "Poppins";
+}
 
 body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #8a2be2, #ff66b2);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -35,4 +37,21 @@ body {
     background-color: #ff66b2;
     color: #ffffff;
   }
-  
+
+  #topRight{
+    margin-left: 65vw;
+  }
+
+  #matchPercent{
+    text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+ 
+  #profileCard{
+    margin-left:15vw;
+  }
+
+   
