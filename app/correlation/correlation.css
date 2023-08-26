@@ -10,29 +10,29 @@ body {
   }
   
   body.min-h-screen {
-    min-height: 100vh;
+    min-height: 20vw;
   }
   
   .flex-center {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    min-height: 100vh;
-    padding-left: 1rem; /* Add some spacing to the left */
+    min-height: 47.85vw;
+    padding-left: 1vw; /* Add some spacing to the left */
   }
   .product-name {
     position: absolute;
-    top: 20px; /* Adjust top position */
-    left: 20px; /* Adjust left position */
+    top: 1vw; /* Adjust top position */
+    left: 1vw; /* Adjust left position */
     color: #f8f8f8;
-    font-size: 40px;
+    font-size:3vw;
     font-weight: bolder;
 }
   
   .profile-link {
     display: inline-block;
-    padding: 1rem 3rem; /* Make the button larger */
-    border-radius: 1.5rem;
+    padding: 1vw 3vw; /* Make the button larger */
+    border-radius: 1vw;
     text-decoration: none;
     background-color: #f8f8f8;
     color: #DA9CDF;
@@ -43,17 +43,17 @@ body {
 
   .description{
     position: absolute;
-    top: 240px; /* Adjust top position */
-    left: 400px; /* Adjust left position */
+    top: 16vw; /* Adjust top position */
+    left: 27vw; /* Adjust left position */
     color: #f8f8f8;
     font-size: 30px;
     font-weight: bolder;
   }
 
-  .searchContainer {
+.searchContainer {
     position: absolute;
-    top: 160px;
-    right: 275px;
+    top: 16vw;
+    right: 27.5vw;
     display: flex;
     align-items: center;
     background-color: #f8f8f8;
@@ -62,20 +62,20 @@ body {
 }
 
 .searchInput {
-    padding: 1rem;
+    padding: 1vw;
     border: none;
-    border-radius: 2rem 0 0 2rem;
+    border-radius: 2vw 0 0 2vw;
     background-color: transparent;
-    font-size: 18px;
+    font-size: 1.8vw;
     color: #333;
     outline: none;
-    width: 800px; /* Adjusted width */
+    width: 80vw; /* Adjusted width */
 }
 
 .searchButton {
-    padding: 1rem 2rem;
+    padding: 1vw 2vw;
     border: none;
-    border-radius: 0 2rem 2rem 0;
+    border-radius: 0 2vw 2vw 0;
     background-color: #DA9CDF;
     color: #fff;
     cursor: pointer;
@@ -94,15 +94,15 @@ body {
   .connect-link {
     position: absolute;
     display: inline-block;
-    padding: 1rem 3rem; /* Make the button larger */
-    border-radius: 1.5rem;
-    right: 450px;
-    top: 10px;
+    padding: 1vw 3vw; /* Make the button larger */
+    border-radius: 1.5vw;
+    right: 30vw;
+    top: 1vw;
     text-decoration: none;
     background-color: #f8f8f8;
     color: #DA9CDF;
     transition: background-color 0.3s, color 0.3s;
-    font-size: 30px;
+    font-size: 2vw;
     font-weight: bolder;
 }
 
@@ -113,15 +113,15 @@ body {
 .profile-link {
     position: absolute;
     display: inline-block;
-    padding: 1rem 3rem; /* Make the button larger */
-    border-radius: 1.5rem;
-    right: 200px;
-    top: 10px;
+    padding: 1vw 3vw; /* Make the button larger */
+    border-radius: 1.5vw;
+    right: 13vw;
+    top: 1vw;
     text-decoration: none;
     background-color: #f8f8f8;
     color: #DA9CDF;
     transition: background-color 0.3s, color 0.3s;
-    font-size: 30px;
+    font-size: 2vw;
     font-weight: bolder;
 }
 
@@ -132,8 +132,8 @@ body {
 
 .searchContainer {
     position: absolute;
-    top: 160px;
-    right: 275px;
+    top: 10vw;
+    right: 16vw;
     display: flex;
     align-items: center;
     background-color: #f8f8f8;
@@ -142,20 +142,20 @@ body {
 }
 
 .searchInput {
-    padding: 1rem;
+    padding: 0.5vw;
     border: none;
-    border-radius: 2rem 0 0 2rem;
+    border-radius: 1vw 0 0 1vw;
     background-color: transparent;
-    font-size: 18px;
+    font-size: 2vw;
     color: #333;
     outline: none;
-    width: 800px;
+    width: 60vw;
 }
 
 .searchButton {
-    padding: 1rem 2rem;
+    padding: 1vw 2vw;
     border: none;
-    border-radius: 0 2rem 2rem 0;
+    border-radius: 0 2vw 2vw 0;
     background-color: #DA9CDF;
     color: #fff;
     cursor: pointer;
@@ -168,17 +168,17 @@ body {
 
 .match-container {
     position: absolute;
-    top: 70%; /* Center vertically */
+    top: 65%; /* Center vertically */
     left: 51.5%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust to center properly */
     display: flex;
-    gap: 20px;
+    gap: 2vw;
 }
 
 .profile-image {
     position: absolute;
-    top: 10px; /* Adjust top position */
-    right: 40px; /* Adjust right position */
+    top: 1vw; /* Adjust top position */
+    right: 4vw; /* Adjust right position */
 }
 /* correlation.css */
 .match {
@@ -186,22 +186,24 @@ body {
     grid-template-rows: auto 1fr; /* Divide the grid into two rows */
     align-items: center;
     background-color: #a3a1a1;
-    border-radius: 25px;
-    padding: 30px;
-    margin-right: 40px;
-    width: 300px;
+    border-radius: 2.5vw;
+    padding: 3vw;
+    margin-right: 4vw;
+    margin-top: 3vw;
+    width: 22vw;
+    height: 26vw;
 }
 
 .match-picture {
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
     justify-self: center; /* Center the profile picture horizontally */
 }
 
 .match-link-icon {
     justify-self: end; /* Align the link icon to the right */
-    width: 25px;
-    height: 25px;
+    width: 2vw;
+    height: 2vw;
 }
 
 .match-info {
@@ -210,19 +212,16 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 20px;
 }
 
 .match-name {
     color: #f8f8f8;
-    font-size: 40px;
+    font-size: 2vw;
     font-weight: bolder;
-    margin-bottom: 0.5rem;
 }
 
 .match-percentage {
     color: #DA9CDF;
-    font-size: 40px;
+    font-size: 2vw;
     font-weight: bolder;
-    margin-bottom: 0.5rem;
 }
