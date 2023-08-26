@@ -11,6 +11,7 @@ function CreateSpaceForm() {
   const [spaceName, setSpaceName] = useState("");
   const [description, setDescription] = useState("");
   const [publicSpace, setPublicSpace] = useState(false);
+  const [password, setPassword] = useState("");
 
   async function addSpace() {
     await fetch("/spaces/create/api", {
@@ -19,6 +20,7 @@ function CreateSpaceForm() {
         name: spaceName,
         description: description,
         publicSpace: publicSpace,
+        password: password
       }),
       headers: {
         "Content-Type": "application/json",
@@ -32,6 +34,7 @@ function CreateSpaceForm() {
         placeholder="Space Name"
         onChange={(e) => setSpaceName(e.currentTarget.value)}
       />
+
       <Textarea
         placeholder="Space Description"
         onChange={(e) => setDescription(e.currentTarget.value)}
@@ -40,6 +43,14 @@ function CreateSpaceForm() {
         <Switch id="public" onCheckedChange={(e) => setPublicSpace(e)} />
         <Label htmlFor="public">Public</Label>
       </div>
+
+      {!publicSpace && (
+        <Input
+          placeholder="Password"
+          onChange={(e) => setPassword(e.currentTarget.value)}
+        />
+      )}
+
       <Button onClick={async () => await addSpace()}>Submit</Button>
     </div>
   );

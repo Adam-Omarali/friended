@@ -1,5 +1,7 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
+import { AddUserButton } from "./update/AddUserButton";
+
 
 interface space {
   id: string;
@@ -8,12 +10,13 @@ interface space {
   public: boolean;
   organizationid: string;
   participantids: string[];
+  password: string;
 }
 
 export async function Page() {
   const supabase = createServerComponentClient({ cookies });
 
-  const { data: spaces, error } = await supabase.from("spaces").select();
+  const { data: spaces, error } = await supabase.from("events").select();
 
   return (
     <div className="p-4">
@@ -35,6 +38,7 @@ export async function Page() {
                 Participants
               </p>
             </div>
+            <AddUserButton eventId={{id:space.id, participant:space.participantids, public:space.public, password:space.password}} />
           </div>
         );
       })}
