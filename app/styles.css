@@ -12,6 +12,19 @@
     transform: translate(-50%, -50%); /* Center the image */
     max-width: 100%; /* Ensure image doesn't exceed container */
   }
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.image-container {
+    position: relative;
+  }
+  
+  .landing-image {
+    position: absolute;
+    top: 25vw; /* Position from top */
+    left: 65%; /* Position from left */
+    transform: translate(-50%, -50%); /* Center the image */
+    max-width: 100%; /* Ensure image doesn't exceed container */
+  }
 
 body {
     margin: 0;
@@ -39,8 +52,11 @@ body {
     display: inline-block;
     padding: 1vw 5vw; /* Make the button larger */
     border-radius: 2vw;
+    padding: 1vw 5vw; /* Make the button larger */
+    border-radius: 2vw;
     text-decoration: none;
     background-color: #f8f8f8;
+    color: #DA9CDF;
     color: #DA9CDF;
     transition: background-color 0.3s, color 0.3s;
     margin-top: 1vw;
@@ -84,3 +100,42 @@ body {
     color: #ffffff;
   }
   
+
+  #topRight{
+    margin-left: 65vw;
+  }
+
+  #matchPercent{
+    text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+ 
+  #profileCard{
+    margin-left:15vw;
+  }
+
+  #topRightProfile{
+    margin-left:75vw;
+  }
+  
+  #resultsList{
+    
+    width:100%;
+    background-color:white;
+    border-radius:1vw;
+    margin-top:1rem;
+    max-height:300px;
+    overflow-y:scroll;
+}
+
+#searchResult{
+    padding:10px 20px;
+    background-color: white;
+    color:black;
+    cursor:pointer;
+}
+
+ 
