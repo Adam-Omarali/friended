@@ -26,6 +26,10 @@
   }
 }
 
+.background {
+  background: linear-gradient(135deg, #8a2be2, #ff66b2);
+}
+
 .animate-in {
   animation: animateIn 0.3s ease 0.15s both;
 }
