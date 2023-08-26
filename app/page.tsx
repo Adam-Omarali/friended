@@ -25,7 +25,7 @@ export default async function Index() {
           Connect with hackers <br />
           and fellow enthusiasts.
           </h2>
-          <Link href="/login" className="login-link">
+          <Link href="/login" className="google-link">
             login with google.
           </Link>
           <Image
