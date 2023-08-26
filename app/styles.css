@@ -7,7 +7,7 @@
   
   .landing-image {
     position: absolute;
-    top: 50%; /* Position from top */
+    top: 25vw; /* Position from top */
     left: 65%; /* Position from left */
     transform: translate(-50%, -50%); /* Center the image */
     max-width: 100%; /* Ensure image doesn't exceed container */
@@ -31,38 +31,37 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    min-height: 100vh;
-    padding-left: 1rem; /* Add some spacing to the left */
+    min-height: 20vw;
+    padding-left: 1vw; /* Add some spacing to the left */
   }
   
   .login-link {
     display: inline-block;
-    padding: 1rem 5rem; /* Make the button larger */
-    border-radius: 2rem;
+    padding: 1vw 5vw; /* Make the button larger */
+    border-radius: 2vw;
     text-decoration: none;
     background-color: #f8f8f8;
     color: #DA9CDF;
     transition: background-color 0.3s, color 0.3s;
-    margin-top: 4rem;
-    margin-left: 10rem; 
-    font-size: 30px;
+    margin-top: 2vw;
+    margin-left: 10vw; 
+    font-size: 2vw;
     font-weight: bolder;/* Add space below the middle */
   }
 
   .product-name {
     color: #f8f8f8;
-    font-size: 70px;
+    font-size: 5vw;
     font-weight: bolder;
-    margin-left: 10rem;
-    margin-top: 100px;
-    margin-bottom: 2rem;
+    margin-left: 10vw;
+    margin-bottom: 2vw;
   }
 
   .product-description {
     color: #f8f8f8;
-    font-size: 30px;
+    font-size: 2vw;
     font-weight: bolder;
-    margin-left: 10rem;
+    margin-left: 10vw;
   }
   
   .login-link:hover {
