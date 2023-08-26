@@ -1,0 +1,38 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #8a2be2, #ff66b2);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body.min-h-screen {
+    min-height: 100vh;
+  }
+  
+  .flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: #f8f8f8;
+    color: #ff66b2;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .login-link:hover {
+    background-color: #ff66b2;
+    color: #ffffff;
+  }
+  
