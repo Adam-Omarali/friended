@@ -1,9 +1,17 @@
 /* styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-:root {
-  --font-poppins: "Poppins";
-}
+.image-container {
+    position: relative;
+  }
+  
+  .landing-image {
+    position: absolute;
+    top: 25vw; /* Position from top */
+    left: 65%; /* Position from left */
+    transform: translate(-50%, -50%); /* Center the image */
+    max-width: 100%; /* Ensure image doesn't exceed container */
+  }
 
 body {
     margin: 0;
@@ -11,6 +19,7 @@ body {
     background: linear-gradient(135deg, #8a2be2, #ff66b2);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: Poppins;
   }
   
   body.min-h-screen {
@@ -20,23 +29,46 @@ body {
   .flex-center {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 20vw;
+    padding-left: 1vw; /* Add some spacing to the left */
   }
   
   .login-link {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+    padding: 1vw 5vw; /* Make the button larger */
+    border-radius: 2vw;
     text-decoration: none;
     background-color: #f8f8f8;
-    color: #ff66b2;
+    color: #DA9CDF;
     transition: background-color 0.3s, color 0.3s;
+    margin-top: 2vw;
+    margin-left: 10vw; 
+    font-size: 2vw;
+    font-weight: bolder;/* Add space below the middle */
+  }
+
+  .product-name {
+    color: #f8f8f8;
+    font-size: 5vw;
+    font-weight: bolder;
+    margin-left: 10vw;
+    margin-bottom: 2vw;
+  }
+
+  .product-description {
+    color: #f8f8f8;
+    font-size: 2vw;
+    font-weight: bolder;
+    margin-left: 10vw;
   }
   
   .login-link:hover {
-    background-color: #ff66b2;
+    background-color: #DA9CDF;
     color: #ffffff;
   }
+  
 
   #topRight{
     margin-left: 65vw;
@@ -54,4 +86,25 @@ body {
     margin-left:15vw;
   }
 
-   
+  #topRightProfile{
+    margin-left:75vw;
+  }
+  
+  #resultsList{
+    
+    width:100%;
+    background-color:white;
+    border-radius:1vw;
+    margin-top:1rem;
+    max-height:300px;
+    overflow-y:scroll;
+}
+
+#searchResult{
+    padding:10px 20px;
+    background-color: white;
+    color:black;
+    cursor:pointer;
+}
+
+ 
