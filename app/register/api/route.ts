@@ -175,7 +175,6 @@ export async function POST(request: Request) {
   ]);
 
   if (error) {
-    console.log(error);
     return NextResponse.error();
   }
 

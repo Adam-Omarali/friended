@@ -17,7 +17,6 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
   const existingParticipant = eventId.participant;
   const newParticipant = eventId.newParticipant;
   const existingEvents = eventId.userEvents;
-  console.log(existingEvents);
   const spacePassword = eventId.password;
   const isPublic = eventId.public;
   const router = useRouter();

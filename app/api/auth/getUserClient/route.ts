@@ -13,7 +13,6 @@ export async function GETClient(){
         }
     })
     const { data: { user } } = await supabase.auth.getUser()
-    console.log(user);
     if(user){
         const {data: dataPublic} = await supabasePublic.from("users").select().eq('id', user.id)
         return dataPublic    

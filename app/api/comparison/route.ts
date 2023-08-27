@@ -16,6 +16,7 @@ export async function POST(request: Request){
     let {data: vec2, error: e2} = await supabase.from("users").select("embedding").eq("id", user2)
 
     if(vec1 && vec2){
+        console.log(vec1)
         let res1 = JSON.parse(vec1[0].embedding)
         let res2 = JSON.parse(vec2[0].embedding)
         return NextResponse.json({similarity: dotproduct(res1, res2)})
