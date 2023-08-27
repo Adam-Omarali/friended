@@ -1,9 +1,11 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import { AddUserButton } from "./update/AddUserButton";
+import { Events } from "./update/Events"
+import Image from 'next/image';
+import profile from '../img/profile.png';
+import "./spaces.css";
 
-
-interface space {
+interface Space {
   id: string;
   name: string;
   description: string;
@@ -16,33 +18,20 @@ interface space {
 export async function Page() {
   const supabase = createServerComponentClient({ cookies });
 
-  const { data: spaces, error } = await supabase.from("events").select();
-
+  const { data: spaces} = await supabase.from("events").select();
+  const { data: organizations} = await supabase.from("organizations").select()
+  const { data: userInfo} = await supabase.from("users").select();
   return (
-    <div className="p-4">
-      {spaces?.map(async (space) => {
-        const { data: organizer } = await supabase
-          .from("organizations")
-          .select("name")
-          .eq("id", `${space.organizationid as string}`);
-        return (
-          <div className="">
-            <div className="flex justify-between align-center w-full">
-              <h1>{space.name}</h1>
-              <p>Organized by {organizer ? organizer[0].name : ""}</p>
-            </div>
-            <div className="flex justify-between w-full">
-              <p>{space.description}</p>
-              <p>
-                {space.participantids ? space.participantids.length : 0}{" "}
-                Participants
-              </p>
-            </div>
-            <AddUserButton eventId={{id:space.id, participant:space.participantids, public:space.public, password:space.password}} />
-          </div>
-        );
-      })}
-    </div>
+    <body className="body">
+      <div className="container">
+        <div className="profile-image">
+          <Image src={profile} alt="Profile Picture" width={75} height={75} />
+        </div>
+        <h1 className="product-name">friended.</h1>
+        <h2 className="events">Events</h2>
+      </div>
+      <Events spaces={{spaceInfo:spaces, organizationInfo: organizations, userInfo: userInfo}}/>
+    </body>
   );
 }
 
