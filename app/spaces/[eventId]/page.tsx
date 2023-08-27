@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { createClient } from "@supabase/supabase-js";
+import "../../styles.css";
 
 export default async function Page({ params }: { params: any }) {
   const eventId = params.eventId;
@@ -40,14 +41,22 @@ export default async function Page({ params }: { params: any }) {
           const findUser = allUsers.find((user: any) => user.id === partId);
           console.log(findUser);
           console.log(findUser.name);
-          const findAuth = nextAuthUsers.find((user: any) => user.id === partId);
-         // console.log(findAuth);
-            return (
-              <li key={partId}>
-                <Image src={findAuth.image} width={500} height={500} alt={"profile-picture"}/>
-                Name: {findUser.username}
+          const findAuth = nextAuthUsers.find(
+            (user: any) => user.id === partId
+          );
+          // console.log(findAuth);
+          return (
+            <li key={partId}>
+              <Image
+                src={findAuth.image}
+                width={100}
+                height={100}
+                alt={"profile-picture"}
+                className="bor"
+              />
+              Name: {findUser.username}
             </li>
-            );
+          );
           return null;
         })}
       </ul>
