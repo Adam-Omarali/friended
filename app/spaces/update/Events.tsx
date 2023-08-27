@@ -29,14 +29,24 @@ export function Events({ spaces }: SpaceProps) {
     <div>
       <div className="flex justify-center items-center h-screen">
         <div className="searchContainer">
+<<<<<<< HEAD
           <input
+=======
+            <input
+>>>>>>> Jonathan
             type="text"
             className="searchInput"
             placeholder="search by event name."
             onChange={(e) => setSearchQuery(e.target.value)}
+<<<<<<< HEAD
           />
           <button className="searchButton">Search</button>
         </div>
+=======
+            />
+            <button className="searchButton">Search</button>
+        </div>  
+>>>>>>> Jonathan
       </div>
       <div className="space-container ">
         {filteredSpaces?.map((space: any) => {
@@ -53,9 +63,13 @@ export function Events({ spaces }: SpaceProps) {
                 Participants
               </p>
               <p className="space-description">{space.description} </p>
+<<<<<<< HEAD
               <p className="public">
                 {space.public === true ? "Public Event" : "Private Event"}
               </p>
+=======
+              <p className="public">{space.public===true?"Public Event":"Private Event"}</p>
+>>>>>>> Jonathan
               <p className="organizer">
                 Organized by{" "}
                 <strong id="organizerName">
@@ -68,7 +82,11 @@ export function Events({ spaces }: SpaceProps) {
                   participant: space.participantids,
                   public: space.public,
                   password: space.password,
+<<<<<<< HEAD
                   newParticipant: newUserId,
+=======
+                  // newParticipant: participantMock,
+>>>>>>> Jonathan
                 }}
               />
             </div>

@@ -5,20 +5,20 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
+import ToggleSwitch from "./switch";
 import "../../styles.css";
 import { GETClient } from "../../api/auth/getUserClient/route";
 
 function CreateSpaceForm() {
   const [spaceName, setSpaceName] = useState("");
   const [description, setDescription] = useState("");
-  const [publicSpace, setPublicSpace] = useState(false);
+  const [publicSpace, setPublicSpace] = useState(true);
   const [password, setPassword] = useState("");
   const [dropDisplay, setDropDisplay] = useState(false);
   const [spaceChoice, setSpaceChoice] = useState("");
   const [spaceChoiceMessage, setSpaceChoiceMessage] = useState("space type");
 
   async function addSpace() {
-    console.log("first");
     const data = await GETClient();
     console.log(data);
     await fetch("/spaces/create/api", {
@@ -47,7 +47,15 @@ function CreateSpaceForm() {
   ];
 
   function handleChoices() {
-    setDropDisplay(true);
+    if (publicSpace){
+      setPublicSpace(false);
+      setSpaceChoice('private');
+    }
+    else{
+      setPublicSpace(true);
+      setSpaceChoice('public');
+    }
+    setDropDisplay(!dropDisplay);
   }
 
   const handleSelection = (value: any) => {
@@ -83,7 +91,7 @@ function CreateSpaceForm() {
             onChange={(e) => setDescription(e.currentTarget.value)}
           />
         </div>
-        <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-1">
+        {/* <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-1">
           <input
             className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
@@ -120,8 +128,10 @@ function CreateSpaceForm() {
           ) : (
             <h1></h1>
           )}
+        </div> */}
+        <div onClick = {()=>{handleChoices}}>
+          <ToggleSwitch label="Private" />
         </div>
-
         {spaceChoice === "private" ? (
           <div>
             <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-3">
@@ -147,6 +157,7 @@ function CreateSpaceForm() {
 
         <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
           <button
+            id="customButton" 
             className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl py-2 px-3 leading-tight"
             onClick={async () => await addSpace()}
           >

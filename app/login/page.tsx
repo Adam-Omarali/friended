@@ -23,10 +23,10 @@ export default function Login() {
             </div>
             
             <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
-              <button className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/correlation">sign up.</Link></button>
+              <button id="customButton" className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/correlation">sign up.</Link></button>
             </div>
             <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
-              <button className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/correlation">sign in.</Link></button>
+              <button id="customButton" className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/correlation">sign in.</Link></button>
             </div>
             </form>
           </div>
