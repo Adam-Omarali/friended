@@ -30,6 +30,8 @@ const CorrelationComponent = () => {
   const [searchRequest, setSearchRequest] = useState("");
   const [people, setPeople] = useState(dataArray); //set to empty array for real
 
+  const [data, setData] = useState(dataArray);
+
   function handleChoices() {
     setDropDisplay(true);
     setSpaceChoice("select space.");
@@ -64,8 +66,9 @@ const CorrelationComponent = () => {
       `/api/searchQuery?query=${encodeURIComponent(searchRequest)}`
     );
 
-    // const data = await response.json();
-    console.log(searchRequest);
+    const data = await response.json();
+    console.log(data);
+    setData(data);
   };
 
   return (
@@ -156,8 +159,8 @@ const CorrelationComponent = () => {
           )}
 
           <div className="match-container ">
-            {dataArray.map((match, index) => (
-              <div key={index} className="match relative">
+            {data.map((match: any) => (
+              <div key={match.id} className="match relative">
                 <div className="match-picture">
                   <Image
                     src={profile}
@@ -167,7 +170,7 @@ const CorrelationComponent = () => {
                   />
                 </div>
                 <div className="absolute top-0 right-0 h-16 w-16  pt-11">
-                  <Link href="/">
+                  <Link href={`/view/${match.id}`}>
                     <Image
                       src={link}
                       alt="Match Link Icon"
@@ -176,12 +179,10 @@ const CorrelationComponent = () => {
                   </Link>
                 </div>
                 <div className="match-info">
-                  <p className="match-name">
-                    {match.firstName}
-                    <br />
-                    {match.lastName}
+                  <p className="match-name">{match.username}</p>
+                  <p className="match-percentage">
+                    {match.similarity ? match.similarity.toFixed(2) : ""}% Match
                   </p>
-                  <p className="match-percentage">{match.percentage}%</p>
                 </div>
               </div>
             ))}
