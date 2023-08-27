@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #8a2be2, #ff66b2);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: Poppins;
-  }
   
   body.min-h-screen {
     min-height: 20vw;
