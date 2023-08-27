@@ -13,7 +13,6 @@ export async function GET(){
 
     const {data, error} = await supabase.from("users").select('id').eq('email', session?.user?.email)
     if(data && data.length > 0){
-        console.log(data[0].id)
         return NextResponse.json(data[0].id)
         
     }

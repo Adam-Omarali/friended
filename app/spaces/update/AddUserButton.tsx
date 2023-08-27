@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { getSession, useSession } from "next-auth/react";
 import { useState } from "react";
+import "../spaces.css";
 
 interface AddUserButtonProps {
   eventId: any;
@@ -13,6 +14,7 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isFail, setIsFail] = useState(false);
   const existingParticipant = eventId.participant;
+  const newParticipant = eventId.newParticipant;
   const spacePassword = eventId.password;
   const isPublic = eventId.public;
   const session = getSession();
@@ -23,24 +25,26 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
     setIsValid(newValue === spacePassword);
   };
 
-  const addUser = async () => {
-    if (!isPublic && !isValid) {
+  const addUser = async (newParticipant:any) => {
+    setIsFail(false);
+    setIsSuccess(false);
+    if(!isPublic && !isValid){
       setIsFail(true);
       setIsSuccess(false);
       return;
     }
-    console.log(session);
     const response = await fetch("/spaces/update/api", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ eventId, existingParticipant }),
+      body: JSON.stringify({ eventId, existingParticipant, newParticipant }),
     });
     setInputValue("");
     const data = await response.json();
     setIsSuccess(true);
     setIsFail(false);
+    console.log("yo yo yo")
     return data;
   };
   return (
@@ -53,7 +57,7 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
           placeholder="Enter password"
         />
       )}
-      <Button onClick={addUser}>Join Event</Button>
+      <Button onClick={()=>addUser(newParticipant)}>Join Event</Button>
       {isFail && (
         <p className="error-message">Password incorrect, please try again!</p>
       )}

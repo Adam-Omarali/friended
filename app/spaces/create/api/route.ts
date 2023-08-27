@@ -17,7 +17,6 @@ export async function POST(request: Request) {
     .select()
 
     if(error){
-        console.log(error)
         return NextResponse.error()
     }
 

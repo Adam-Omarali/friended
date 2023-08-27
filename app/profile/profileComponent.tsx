@@ -43,7 +43,7 @@ const ProfileComponent = () => {
       <div className="">
         <h1 className="text-white body-font font-poppins text-5xl font-black top-7 mb-5 absolute left-0 top-0 w-16 h-16 ml-10" >friended.</h1>
         <div id="topRightProfile" className="flex absolute top-5  w-16 h-16 ml-10">
-          <button className=" text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/correlation">connect.</Link></button>
+          <button className=" text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/spaces">connect.</Link></button>
           <img className=" w-50 h-50 ml-5 rounded-full " src="https://wallpapers.com/images/featured/minimalist-7xpryajznty61ra3.jpg" alt="Rounded avatar"></img>
         </div>
       </div>
