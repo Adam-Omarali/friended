@@ -71,7 +71,7 @@ const CorrelationComponent = () => {
 
   return (
 
-      <body className="w-full flex-center min-h-screen">
+      <body className="w-full  min-h-screen">
         <div className="">
             <h1 className="text-white body-font font-poppins text-5xl font-black top-7 mb-5 absolute left-0 top-0 w-16 h-16 ml-10" >friended.</h1>
             <div id="topRightCorrelation" className="flex absolute top-5  w-16 h-16 ml-10">
@@ -86,7 +86,7 @@ const CorrelationComponent = () => {
                 <img onClick = {handleChoices} src='https://static.thenounproject.com/png/3012911-200.png' alt="linkedinlogo" width={25} height={25}/>
             </span>
         </div>
-        <div className=" relative  h-48px group justify-center  mt-7" id="spacesList">{dropDisplay ? (
+        <div className=" relative  h-48px group justify-center  mt-7" id="searchList">{dropDisplay ? (
                 spaceOptions.map((result, id)=>{
                     return <div id="searchResult" key={id} onClick={()=>{handleSelection(result)}}>
                         {result.name}
@@ -95,7 +95,7 @@ const CorrelationComponent = () => {
             ) : (<h1></h1>)}
         </div>
         {spaceChoice === 'select space.' ? (<h1></h1>) :
-        (<div className="flex justify-center items-center h-screen">
+        (<div className="justify-center">
             <div className="searchContainer">
                 <input
                 type="text"

@@ -187,18 +187,12 @@ body {
 
 .space-container {
   text-align: center;
-
-  margin-top:50vw;
-  position: absolute;
-  top: 65%; /* Center vertically */
-  left: 51.5%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust to center properly */
-  display: flex;
-  gap: 2vw;
-
+  margin-top: 20vw;
   width: 100%;
+
+  display: flex;
   justify-content: center;
-  
+  align-items: center;
   flex-wrap: wrap;
 }
 
