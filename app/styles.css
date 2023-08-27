@@ -71,7 +71,7 @@ body {
   
 
   #topRight{
-    margin-left: 65vw;
+    margin-left: 55vw;
   }
 
   #matchPercent{
@@ -92,7 +92,15 @@ body {
   }
 
   #topRightProfile{
-    margin-left:75vw;
+    margin-left:65vw;
+  }
+
+  #topRightCorrelation{
+    margin-left:65vw;
+  }
+  
+  #topRightSpaces{
+    margin-left:65vw;
   }
   
   #resultsList{

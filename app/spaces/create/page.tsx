@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import ToggleSwitch from "./switch";
 import "../../styles.css";
 import { GETClient } from "../../api/auth/getUserClient/route";
+import Link from 'next/link'
 
 function CreateSpaceForm() {
   const [spaceName, setSpaceName] = useState("");
@@ -124,7 +125,7 @@ function CreateSpaceForm() {
             className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl py-2 px-3 leading-tight"
             onClick={async () => await addSpace()}
           >
-            create.
+            <Link href="/spaces">create.</Link>
           </button>
         </div>
       </div>
