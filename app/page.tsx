@@ -1,9 +1,6 @@
 // index.js or Index.jsx
 "use client";
 
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-import Link from "next/link";
 import Image from "next/image";
 import landingImg from "./img/landingPage.png";
 import "./styles.css"; // Import your styles

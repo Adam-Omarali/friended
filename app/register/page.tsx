@@ -1,25 +1,11 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
-import RegisterComponent from './registerComponent';
+import RegisterComponent from "./registerComponent";
 
-import '../styles.css';
+import "../styles.css";
 
-export const dynamic = 'force-dynamic'
-
-export default async function Register() {
-  const supabase = createServerComponentClient({ cookies })
-  
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-
-  return (
-    <RegisterComponent />
-  )
-
-  
-
- 
-
-  
+export default async function Register({
+  searchParams,
+}: {
+  searchParams: { uid: string; name: string };
+}) {
+  return <RegisterComponent id={searchParams.uid} name={searchParams.name} />;
 }

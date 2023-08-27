@@ -2,7 +2,6 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { AddUserButton } from "./update/AddUserButton";
 
-
 interface space {
   id: string;
   name: string;
@@ -38,7 +37,14 @@ export async function Page() {
                 Participants
               </p>
             </div>
-            <AddUserButton eventId={{id:space.id, participant:space.participantids, public:space.public, password:space.password}} />
+            <AddUserButton
+              eventId={{
+                id: space.id,
+                participant: space.participantids,
+                public: space.public,
+                password: space.password,
+              }}
+            />
           </div>
         );
       })}
