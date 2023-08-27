@@ -30,13 +30,15 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
     setIsDuplicateParticipant(false); 
     if (!isPublic && !isValid) {
       setIsFail(true);
+      setIsSuccess(false);
+      setIsDuplicateParticipant(false);
       return;
     }
   
     if (existingParticipant.includes(newParticipant)) {
       setIsFail(false);
       setIsSuccess(false);
-      setIsDuplicateParticipant(true); // New state to handle duplicate participant message
+      setIsDuplicateParticipant(true);
       return;
     }
   
@@ -50,18 +52,9 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
   
     setInputValue("");
     const data = await response.json();
-    
-    if (data.success) {
-      setIsSuccess(true);
-      setIsFail(false);
-      setIsDuplicateParticipant(false); 
-    } else {
-      setIsDuplicateParticipant(false); 
-      setIsSuccess(false);
-      setIsFail(true);
-    }
-    
-    setIsDuplicateParticipant(false); // Reset the duplicate participant state
+    setIsSuccess(true);
+    setIsFail(false);
+    setIsDuplicateParticipant(false);  // Reset the duplicate participant state
     return data;
   };
   

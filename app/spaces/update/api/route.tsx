@@ -1,6 +1,6 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   const supabase = createServerComponentClient({ cookies });
@@ -14,10 +14,8 @@ export async function POST(request: Request) {
     .from('events')
     .update({ participantids: updatedParticipantIds })
     .eq('id', eventId.id);
-
   if (error) {
     return NextResponse.error();
   }
-
   return NextResponse.json(data);
 }

@@ -68,7 +68,7 @@ export function Events({ spaces }: SpaceProps) {
                   participant: space.participantids,
                   public: space.public,
                   password: space.password,
-                  // newParticipant: participantMock,
+                  newParticipant: newUserId,
                 }}
               />
             </div>
