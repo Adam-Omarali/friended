@@ -2,10 +2,11 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { Events } from "./update/Events";
 import Image from "next/image";
+import Link from "next/link";
 import profile from "../img/profile.png";
-import Link from 'next/link';
-import "../styles.css";
-// import "./spaces.css";
+import { GET } from "../api/auth/getUserId/route";
+import React from "react";
+import "./spaces.css";
 
 interface space {
   id: string;
@@ -19,10 +20,12 @@ interface space {
 
 export async function Page() {
   const supabase = createServerComponentClient({ cookies });
-
   const { data: spaces } = await supabase.from("events").select();
   const { data: organizations } = await supabase.from("organizations").select();
   const { data: userInfo } = await supabase.from("users").select();
+  const response = await GET();
+  const dataRes = await response.json();
+  console.log(dataRes);
   return (
     <body className="w-full flex-center min-h-screen">
       <div className="">
