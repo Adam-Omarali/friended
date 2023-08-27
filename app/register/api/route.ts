@@ -110,7 +110,7 @@ export async function POST(request: Request) {
     url: "https://linkedin-profiles-and-company-data.p.rapidapi.com/profile-details",
     headers: {
       "content-type": "application/json",
-      "X-RapidAPI-Key": "73af45b8cbmshcad4f53f8eb3488p113aeajsn19a533b9cc62",
+      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
       "X-RapidAPI-Host": "linkedin-profiles-and-company-data.p.rapidapi.com",
     },
     data: {

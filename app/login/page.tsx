@@ -16,17 +16,17 @@ export default function Login() {
                 </span>
             </div>  
             <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
-                <input className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="your password."/>
+                <input className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"  type="password" placeholder="your password."/>
                 <span className="flex absolute right-0 bg-transparent rounded text-base text-gray-600 p-2">
                   <img  src="https://cdn-icons-png.flaticon.com/512/4091/4091030.png" alt="linkedinlogo" width={25} height={25}/>
                 </span>
             </div>
             
             <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
-              <button className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/correlation">sign up.</Link></button>
+              <button id="customButton" className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/correlation">sign up.</Link></button>
             </div>
             <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
-              <button className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/correlation">sign in.</Link></button>
+              <button id="customButton" className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/correlation">sign in.</Link></button>
             </div>
             </form>
           </div>

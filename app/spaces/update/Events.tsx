@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "../spaces.css";
 import { AddUserButton } from "./AddUserButton";
 
 interface SpaceProps {
@@ -10,7 +9,7 @@ interface SpaceProps {
 export function Events({ spaces }: SpaceProps) {
   const spaceInfo = spaces.spaceInfo;
   const organizationInfo = spaces.organizationInfo;
-  const participantMock = "test";
+  const newUserId = spaces.newUserId;
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredSpaces, setFilteredSpaces] = useState(spaceInfo);
@@ -30,42 +29,47 @@ export function Events({ spaces }: SpaceProps) {
 
   return (
     <div>
-      <div className="search-bar">
+      <div className="searchContainer">
         <input
           type="text"
-          placeholder="Search by event name"
-          value={searchQuery}
+          className="searchInput"
+          placeholder="search by event name."
           onChange={(e) => setSearchQuery(e.target.value)}
         />
+        <button className="searchButton">Search</button>
       </div>
-      <div className="flex-container">
+
+      <div className="space-container">
         {filteredSpaces?.map((space: any) => {
           const organizer = organizationInfo.find(
             (org: any) => org.id == space.organizationid
           );
           return (
-            <div className="space-container" key={space.id}>
-              <div className="header">
-                <h1 className="space-name">{space.name}</h1>
-                <p className="participants">
+            <div className="space relative" key={space.id}>
+              <h1 className="space-name">{space.name}</h1>
+              <p className="text-2xl">
+                <p className="participants mb-5">
                   {space.participantids ? space.participantids.length : 0}{" "}
-                  Participants
                 </p>
-                <p className="public">
-                  {space.public === true ? "Public Event" : "Private Event"}
-                </p>
-                <p className="organizer">
-                  Organized by {organizer ? organizer.name : ""}
-                </p>
-              </div>
-              <p className="space-description">{space.description}</p>
+                Participants
+              </p>
+              <p className="space-description">{space.description} </p>
+              <p className="public">
+                {space.public === true ? "Public Event" : "Private Event"}
+              </p>
+              <p className="organizer">
+                Organized by{" "}
+                <strong id="organizerName">
+                  {organizer ? organizer.name : ""}
+                </strong>
+              </p>
               <AddUserButton
                 eventId={{
                   id: space.id,
                   participant: space.participantids,
                   public: space.public,
                   password: space.password,
-                  newParticipant: participantMock,
+                  // newParticipant: participantMock,
                 }}
               />
             </div>

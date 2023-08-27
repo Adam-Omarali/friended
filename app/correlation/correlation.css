@@ -95,7 +95,7 @@
 }
 
 .searchInput {
-    padding: 0.5vw;
+    
     border: none;
     border-radius: 1vw 0 0 1vw;
     background-color: transparent;
@@ -120,12 +120,15 @@
 }
 
 .match-container {
-    position: absolute;
-    top: 65%; /* Center vertically */
-    left: 51.5%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust to center properly */
+
+    text-align: center;
+    margin-top:15vw;
+    width: 100%;
+
     display: flex;
-    gap: 2vw;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .profile-image {
@@ -136,15 +139,15 @@
 /* correlation.css */
 .match {
     display: grid; /* Use CSS Grid for the layout */
-    grid-template-rows: auto 1fr; /* Divide the grid into two rows */
-    align-items: center;
-    background-color: #DFCD9C;
-    border-radius: 2.5vw;
-    padding: 3vw;
-    margin-right: 4vw;
-    margin-top: 3vw;
-    width: 22vw;
-    height: 26vw;
+  grid-template-rows: auto 1fr; /* Divide the grid into two rows */
+  align-items: center;
+  background-color: #DFCD9C;
+  border-radius: 2.5vw;
+  padding: 3vw;
+  margin-right: 4vw;
+  margin-top: 3vw;
+  width: 22vw;
+  height: 26vw; 
 }
 
 .match-picture {
@@ -185,17 +188,20 @@
     
 }
 
-#spacesList{
+#searchList{
     margin-left:30vw;
     background-color:white;
     border-radius:1vw;
     margin-top:1rem;
     max-height:300px;
     overflow-y:scroll;
+    width:30%;
 }
 
 #searchResult{
     z-index:-1;
     width:30vw;
 }
+
+
 

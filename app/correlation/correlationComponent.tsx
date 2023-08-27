@@ -30,7 +30,7 @@ const CorrelationComponent = () => {
   const [searchRequest, setSearchRequest] = useState("");
   const [people, setPeople] = useState(dataArray); //set to empty array for real
 
-  const [data, setData] = useState(dataArray);
+  const [data, setData] = useState([]);
 
   function handleChoices() {
     setDropDisplay(true);
@@ -66,22 +66,31 @@ const CorrelationComponent = () => {
       `/api/searchQuery?query=${encodeURIComponent(searchRequest)}`
     );
 
-    const data = await response.json();
-    console.log(data);
-    setData(data);
+    const resdata = await response.json();
+    console.log(resdata);
+    setData(resdata);
   };
 
   return (
-    <body className="w-full flex-center min-h-screen">
+    <body className="w-full  min-h-screen">
       <div className="">
         <h1 className="text-white body-font font-poppins text-5xl font-black top-7 mb-5 absolute left-0 top-0 w-16 h-16 ml-10">
           friended.
         </h1>
-        <div id="topRight" className="flex absolute top-5  w-16 h-16 ml-10">
-          <button className=" text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight">
-            <Link href="/spaces">connect.</Link>
+        <div
+          id="topRightCorrelation"
+          className="flex absolute top-5  w-16 h-16 ml-10"
+        >
+          <button
+            id="customButton"
+            className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"
+          >
+            <Link href="/spaces">spaces.</Link>
           </button>
-          <button className=" text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  ml-5  py-2 px-3 leading-tight">
+          <button
+            id="customButton"
+            className=" text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  ml-5  py-2 px-3 leading-tight"
+          >
             <Link href="/profile">profile</Link>
           </button>
           <img
@@ -112,7 +121,7 @@ const CorrelationComponent = () => {
       </div>
       <div
         className=" relative  h-48px group justify-center  mt-7"
-        id="spacesList"
+        id="searchList"
       >
         {dropDisplay ? (
           spaceOptions.map((result, id) => {
@@ -135,7 +144,7 @@ const CorrelationComponent = () => {
       {spaceChoice === "select space." ? (
         <h1></h1>
       ) : (
-        <div className="flex justify-center items-center h-screen">
+        <div className="justify-center">
           <div className="searchContainer">
             <input
               type="text"
@@ -145,20 +154,67 @@ const CorrelationComponent = () => {
                 setSearchRequest(e.target.value);
               }}
             />
-            <button className="searchButton" onClick={(e) => handleSubmit(e)}>
+            <button onClick={(e) => handleSubmit(e)} className="searchButton">
               Search
             </button>
           </div>
 
           {searchRequest === "" ? (
-            <h2 className="description">
-              currently showing those most similar to you.
+            <h2 className="description text-center">
+              search for ai-reccommended profiles.
             </h2>
           ) : (
-            <h2 className="altdescription">displaying search results.</h2>
+            <h2 className="altdescription text-center">
+              displaying search results.
+            </h2>
           )}
 
           <div className="match-container ">
+            {data.length > 1 &&
+              data.map((match: any) => (
+                <div key={match.id} className="match relative">
+                  <div className="match-picture">
+                    <Image
+                      src={profile}
+                      alt="Match Profile Picture"
+                      width={200}
+                      height={200}
+                    />
+                  </div>
+                  <div className="absolute top-0 right-0 h-16 w-16  pt-11">
+                    <Link href={`/view/${match.id}`}>
+                      <Image
+                        src={link}
+                        alt="Match Link Icon"
+                        className="match-link-icon"
+                      />
+                    </Link>
+                  </div>
+                  <div className="match-info">
+                    <p className="match-name">{match.username}</p>
+                    <p className="match-percentage">
+                      {match.similarity
+                        ? match.similarity.toFixed(2) * 100
+                        : ""}
+                      % match.
+                    </p>
+                    <div className="w-3/4 hidden">
+                      <p className="truncate font-medium">{match.devpost}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+
+          {/* {searchRequest === "" ? (
+            <h2 className="description">
+              Search to find AI-suggested profiles.
+            </h2>
+          ) : (
+            <h2 className="description">Displaying search results.</h2>
+          )} */}
+
+          {/* <div className="match-container ">
             {data.map((match: any) => (
               <div key={match.id} className="match relative">
                 <div className="match-picture">
@@ -187,7 +243,7 @@ const CorrelationComponent = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       )}
     </body>

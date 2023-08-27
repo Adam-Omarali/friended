@@ -23,7 +23,6 @@ export const authOptions = {
 
             let {data: users} = await supabase.from("users").select().eq("id", user.id)
             firstSignIn = users?.length == 0
-
             if(firstSignIn){
                 console.log('signing in')
                 return '/register?uid=' + user.id + '&name=' + user.name
@@ -57,7 +56,7 @@ const handler = NextAuth({providers: [
                 return '/register?uid=' + user.id + '&name=' + user.name
             }
 
-            return true
+            return '/spaces'
         }
 }})
 

@@ -17,6 +17,8 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #8a2be2, #ff66b2);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: Poppins;
@@ -69,7 +71,7 @@ body {
   
 
   #topRight{
-    margin-left: 65vw;
+    margin-left: 55vw;
   }
 
   #matchPercent{
@@ -79,13 +81,26 @@ body {
      -1px 1px 0 #000,
       1px 1px 0 #000;
   }
+
+  .match:hover{
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05, 1.05);
+  }
  
   #profileCard{
     margin-left:15vw;
   }
 
   #topRightProfile{
-    margin-left:75vw;
+    margin-left:65vw;
+  }
+
+  #topRightCorrelation{
+    margin-left:65vw;
+  }
+  
+  #topRightSpaces{
+    margin-left:65vw;
   }
   
   #resultsList{
@@ -103,6 +118,208 @@ body {
     background-color: white;
     color:black;
     cursor:pointer;
+}
+
+.searchInput {
+  padding: 1vw;
+  border: none;
+  border-radius: 2vw 0 0 2vw;
+  background-color: transparent;
+  font-size: 1.8vw;
+  color: #333;
+  outline: none;
+  width: 80vw; /* Adjusted width */
+}
+
+.searchButton {
+  padding: 1vw 2vw;
+  border: none;
+  border-radius: 0 2vw 2vw 0;
+  background-color: #DA9CDF;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #C875B8;
+}
+
+
+
+.searchContainer {
+  position: absolute;
+  top: 10vw;
+  right: 16vw;
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 2rem;
+  overflow: hidden;
+  z-index:1000;
+}
+
+.searchInput {
+  padding: 0.5vw;
+  border: none;
+  border-radius: 1vw 0 0 1vw;
+  background-color: transparent;
+  font-size: 2vw;
+  color: #333;
+  outline: none;
+  width: 60vw;
+}
+
+.searchButton {
+  padding: 1vw 2vw;
+  border: none;
+  border-radius: 0 2vw 2vw 0;
+  background-color: #DA9CDF;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #C875B8;
+}
+
+
+.space-container {
+  text-align: center;
+  margin-top: 20vw;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-image {
+  position: absolute;
+  top: 1vw; /* Adjust top position */
+  right: 4vw; /* Adjust right position */
+}
+/* correlation.css */
+.space {
+  display: grid; /* Use CSS Grid for the layout */
+  grid-template-rows: auto 1fr; /* Divide the grid into two rows */
+  align-items: center;
+  background-color: #DFCD9C;
+  border-radius: 2.5vw;
+  padding: 3vw;
+  margin-right: 4vw;
+  margin-top: 3vw;
+  width: 40vw;
+  height: 40vw; 
+}
+
+.space:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05, 1.05);
+}
+
+.participants{
+  font-size:5vw;
+  color:#C875B8;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.space-description{
+  margin-top:-5vw;
+  overflow: hidden;
+}
+
+.space-name{
+  color:white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.public{
+  font-size:2vw;
+}
+
+#organizerName{
+  color:purple;
+}
+
+#customButton:hover{
+  background-color:beige;
+}
+
+.container {
+  text-align: center;
+}
+.toggle-switch {
+  position: relative;
+  width: 75px;
+  display: inline-block;
+  text-align: left;
+  top: 8px;
+}
+.checkbox {
+  display: none;
+}
+.label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+}
+.inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.inner:before,
+.inner:after {
+  float: left;
+  width: 50%;
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  color: #fff;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.inner:before {
+  content: "YES";
+  padding-left: 10px;
+  background-color: #060;
+  color: #fff;
+}
+.inner:after {
+  content: "NO";
+  padding-right: 10px;
+  background-color: #bbb;
+  color: #fff;
+  text-align: right;
+}
+.switch {
+  display: block;
+  width: 24px;
+  margin: 5px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 40px;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+.checkbox:checked + .label .inner {
+  margin-left: 0;
+}
+.checkbox:checked + .label .switch {
+  right: 0px;
+}
+
+#privateText{
+  color:white;
 }
 
 

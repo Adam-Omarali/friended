@@ -47,7 +47,7 @@ import { createClient } from "@supabase/supabase-js";
 
 export async function GET(request) {
 
-    const openAiAPIKey = "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"
+    const openAiAPIKey = process.env.OPENAI_API_KEY
     const { searchParams } = new URL(request.url)
     const searchQuery = searchParams.get('query');
     console.log(searchQuery)
