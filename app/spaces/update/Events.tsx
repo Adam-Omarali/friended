@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "../spaces.css";
 import { AddUserButton } from "./AddUserButton";
 
 interface SpaceProps {
@@ -28,12 +27,16 @@ export function Events({ spaces }: SpaceProps) {
 
   return (
     <div>
-      <div className="search-bar">
-        <input
-          placeholder="Search by event name"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
+      <div className="flex justify-center items-center h-screen">
+        <div className="searchContainer">
+          <input
+            type="text"
+            className="searchInput"
+            placeholder="search by event name."
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button className="searchButton">Search</button>
+        </div>
       </div>
       <div className="space-container ">
         {filteredSpaces?.map((space: any) => {
@@ -49,7 +52,7 @@ export function Events({ spaces }: SpaceProps) {
                 </p>
                 Participants
               </p>
-              <p className="space-description">{space.description}</p>
+              <p className="space-description">{space.description} </p>
               <p className="public">
                 {space.public === true ? "Public Event" : "Private Event"}
               </p>
@@ -65,7 +68,7 @@ export function Events({ spaces }: SpaceProps) {
                   participant: space.participantids,
                   public: space.public,
                   password: space.password,
-                  newParticipant: participantMock,
+                  // newParticipant: participantMock,
                 }}
               />
             </div>

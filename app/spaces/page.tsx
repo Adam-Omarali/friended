@@ -6,7 +6,7 @@ import Link from "next/link";
 import profile from "../img/profile.png";
 import { GET } from "../api/auth/getUserId/route";
 import React from "react";
-import "./spaces.css";
+import "../styles.css";
 
 interface space {
   id: string;
@@ -27,7 +27,7 @@ export async function Page() {
   const dataRes = await response.json();
   console.log(dataRes);
   return (
-    <body className="w-full flex-center min-h-screen">
+    <div className="w-full flex-center min-h-screen">
       <div className="">
         <h1 className="text-white body-font font-poppins text-5xl font-black top-7 mb-5 absolute left-0 top-0 w-16 h-16 ml-10">
           friended.
@@ -36,7 +36,10 @@ export async function Page() {
           id="topRightProfile"
           className="flex absolute top-5  w-16 h-16 ml-10"
         >
-          <button className=" text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight">
+          <button
+            id="customButton"
+            className=" text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"
+          >
             <Link href="/profile">profile.</Link>
           </button>
           <img
@@ -53,7 +56,7 @@ export async function Page() {
           userInfo: userInfo,
         }}
       />
-    </body>
+    </div>
   );
 }
 
