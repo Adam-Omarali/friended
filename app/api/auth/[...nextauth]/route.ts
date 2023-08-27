@@ -1,10 +1,11 @@
 import { SupabaseAdapter } from "@auth/supabase-adapter";
 import { createClient } from "@supabase/supabase-js";
+import { User } from "next-auth";
 import { Adapter } from "next-auth/adapters";
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 
-const handler = NextAuth({
+export const authOptions = {
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID as string,
@@ -16,7 +17,7 @@ const handler = NextAuth({
         secret: process.env.SUPABASE_SERVICE_ROLE_KEY ?? "",
     }) as Adapter,
     callbacks: {
-        async signIn({ user }){
+        async signIn({ user }: {user: User}){
             let firstSignIn = false
             const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!)
 
@@ -33,6 +34,8 @@ const handler = NextAuth({
             return true
         }
     }
-})
+}
+
+const handler = NextAuth(authOptions)
 
 export {handler as GET, handler as POST}
