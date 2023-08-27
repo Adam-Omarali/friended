@@ -317,5 +317,23 @@ body {
 }
 
 
+#eventName{
+  color:purple;
+}
 
+#info{
+  width:200%;
+  margin-left:-10vw;
+}
+
+#userMessage{
+  margin-left:7vw;
+  margin-top:2vw;
+  color:white;
+  font-size:xx-large;
+}
+
+#users{
+  margin-left:5vw;
+}
  
