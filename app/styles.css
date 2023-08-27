@@ -71,7 +71,7 @@ body {
   
 
   #topRight{
-    margin-left: 65vw;
+    margin-left: 55vw;
   }
 
   #matchPercent{
@@ -92,7 +92,15 @@ body {
   }
 
   #topRightProfile{
-    margin-left:75vw;
+    margin-left:65vw;
+  }
+
+  #topRightCorrelation{
+    margin-left:65vw;
+  }
+  
+  #topRightSpaces{
+    margin-left:65vw;
   }
   
   #resultsList{
@@ -179,18 +187,12 @@ body {
 
 .space-container {
   text-align: center;
-
-  margin-top:50vw;
-  position: absolute;
-  top: 65%; /* Center vertically */
-  left: 51.5%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust to center properly */
-  display: flex;
-  gap: 2vw;
-
+  margin-top: 20vw;
   width: 100%;
+
+  display: flex;
   justify-content: center;
-  
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -209,7 +211,7 @@ body {
   padding: 3vw;
   margin-right: 4vw;
   margin-top: 3vw;
-  width: 40vw;
+  width: 50vw;
   height: 40vw; 
 }
 
@@ -316,6 +318,9 @@ body {
   right: 0px;
 }
 
+#privateText{
+  color:white;
+}
 
 #eventName{
   color:purple;
@@ -336,4 +341,3 @@ body {
 #users{
   margin-left:5vw;
 }
- 

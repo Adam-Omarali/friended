@@ -73,7 +73,7 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
           <input
             value={inputValue}
             onChange={handleInputChange}
-            className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+            className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline mb-4"
             type="password"
             placeholder="password."
           />

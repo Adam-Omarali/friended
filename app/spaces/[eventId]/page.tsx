@@ -27,6 +27,7 @@ export default async function Page({ params }: { params: any }) {
   );
 
   let { data: allEvents } = await supabase.from("events").select();
+  console.log(allEvents);
   let { data: allUsers } = await supabase.from("users").select();
   let { data: nextAuthUsers } = await supabaseNext.from("users").select();
   allEvents = allEvents || [];
@@ -36,9 +37,7 @@ export default async function Page({ params }: { params: any }) {
   const user = await response.json();
   const userId = user[0].id;
 
-  let similarityRes = await fetch(
-    "http://localhost:3000/api/comparison/supabase?user=" + userId
-  );
+  let similarityRes = await fetch("/api/comparison/supabase?user=" + userId);
   let similarity = await similarityRes.json();
 
   if (!slugEvent) {

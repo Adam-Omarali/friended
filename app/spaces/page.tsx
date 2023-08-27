@@ -25,7 +25,7 @@ export async function Page() {
   const dataRes = await response.json();
   //console.log(dataRes);
   return (
-    <div className="w-full flex-center min-h-screen">
+    <div className="w-full flex-center min-h-screen mb-10">
       <div className="">
         <h1 className="text-white body-font font-poppins text-5xl font-black top-7 mb-5 absolute left-0 top-0 w-16 h-16 ml-10">
           friended.
@@ -53,7 +53,7 @@ export async function Page() {
           organizationInfo: organizations,
           userInfo: userInfo,
           newUserId: dataRes[0].id,
-          UserEvent: dataRes[0].events
+          UserEvent: dataRes[0].events,
         }}
       />
     </div>

@@ -29,7 +29,7 @@ export function Events({ spaces }: SpaceProps) {
 
   return (
     <div>
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center">
         <div className="searchContainer">
           <input
             type="text"
@@ -40,7 +40,7 @@ export function Events({ spaces }: SpaceProps) {
           <button className="searchButton">Search</button>
         </div>
       </div>
-      <div className="space-container ">
+      <div className="space-container">
         {filteredSpaces?.map((space: any) => {
           const organizer = organizationInfo.find(
             (org: any) => org.id == space.organizationid
@@ -48,10 +48,8 @@ export function Events({ spaces }: SpaceProps) {
           return (
             <div className="space relative" key={space.id}>
               <h1 className="space-name">{space.name}</h1>
-              <p className="text-2xl">
-                <p className="participants mb-5">
-                  {space.participantids ? space.participantids.length : 0}{" "}
-                </p>
+              <p className="participants mb-5">
+                {space.participantids ? space.participantids.length : 0}{" "}
                 Participants
               </p>
               <p className="space-description">{space.description} </p>
