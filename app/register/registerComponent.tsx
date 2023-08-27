@@ -38,8 +38,6 @@ const RegisterComponent = ({ id, name }: { id: string; name: string }) => {
     setAccountChoiceMessage(value.placeholder);
   };
 
-  
-
   async function handleSignUp() {
     setLoading(true);
     await fetch("/register/api", {
@@ -59,7 +57,7 @@ const RegisterComponent = ({ id, name }: { id: string; name: string }) => {
   }
 
   return (
-    <body className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen">
       <div className="h-screen items-center justify-center w-full max-w-xs">
         <h1 className="text-white body-font font-poppins text-7xl font-black mt-20 mb-5">
           friended.
@@ -153,7 +151,7 @@ const RegisterComponent = ({ id, name }: { id: string; name: string }) => {
         </div>
         {loading ? <p>Loading...</p> : ""}
       </div>
-    </body>
+    </div>
   );
 };
 

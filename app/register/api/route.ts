@@ -96,58 +96,66 @@ export async function POST(request: Request) {
   }
 
   let { username, organization, linkedin, devpost, id } = await request.json();
-  console.log(linkedin, devpost);
 
-  //   Get Linkedin Data and format it:
+  let returnedEmbedddings: number[] | null = null
+  let concatenatedJSON = ""
+  let interestsString = ""
+  let skillsString = ""
+  let experiencesString = ""
 
-  //   Get profile id from Linkedin url
-  const regexPattern = /\/in\/([^/]+)/;
-  const match = regexPattern.exec(linkedin);
-  const profileId = match ? match[1] : null;
+  if(!organization){
 
-  const options = {
-    method: "POST",
-    url: "https://linkedin-profiles-and-company-data.p.rapidapi.com/profile-details",
-    headers: {
-      "content-type": "application/json",
-      "X-RapidAPI-Key": "73af45b8cbmshcad4f53f8eb3488p113aeajsn19a533b9cc62",
-      "X-RapidAPI-Host": "linkedin-profiles-and-company-data.p.rapidapi.com",
-    },
-    data: {
-      profile_id: profileId,
-      profile_type: "personal",
-      contact_info: false,
-      recommendations: false,
-      related_profiles: false,
-    },
-  };
+    //   Get Linkedin Data and format it:
 
-  const response = await axios.request(options);
+    //   Get profile id from Linkedin url
+    const regexPattern = /\/in\/([^/]+)/;
+    const match = regexPattern.exec(linkedin);
+    const profileId = match ? match[1] : null;
 
-  //   Devpost api request here
-  const usernamePattern = /devpost\.com\/(\w+)/i;
-  const devpostmatch = devpost.match(usernamePattern);
+    const options = {
+        method: "POST",
+        url: "https://linkedin-profiles-and-company-data.p.rapidapi.com/profile-details",
+        headers: {
+        "content-type": "application/json",
+        "X-RapidAPI-Key": "73af45b8cbmshcad4f53f8eb3488p113aeajsn19a533b9cc62",
+        "X-RapidAPI-Host": "linkedin-profiles-and-company-data.p.rapidapi.com",
+        },
+        data: {
+        profile_id: profileId,
+        profile_type: "personal",
+        contact_info: false,
+        recommendations: false,
+        related_profiles: false,
+        },
+    };
 
-  const devpostoptions = {
-    method: "GET",
-    url: "https://ripeabledesigners.jshan.repl.co/user/" + devpostmatch[1],
-  };
+    const response = await axios.request(options);
 
-  const devpostresponse = await axios.request(devpostoptions);
-  const devpostdata = devpostresponse.data;
-  const interestsString = devpostdata.interests.join(", ");
+    //   Devpost api request here
+    const usernamePattern = /devpost\.com\/(\w+)/i;
+    const devpostmatch = devpost.match(usernamePattern);
 
-  const experiencesString = concExperiences(response);
-  const skillsString = concSkills(response);
+    const devpostoptions = {
+        method: "GET",
+        url: "https://ripeabledesigners.jshan.repl.co/user/" + devpostmatch[1],
+    };
 
-  console.log(interestsString, experiencesString, skillsString);
+    const devpostresponse = await axios.request(devpostoptions);
+    const devpostdata = devpostresponse.data;
+    interestsString = devpostdata.interests.join(", ");
 
-  const concatenatedJSON = concatUserJSON(response);
+    experiencesString = concExperiences(response);
+    skillsString = concSkills(response);
 
-  const embeddings = new OpenAIEmbeddings();
+    concatenatedJSON = concatUserJSON(response);
 
-  const returnedEmbedddings = await embeddings.embedQuery(concatenatedJSON);
-  console.log(returnedEmbedddings);
+    const embeddings = new OpenAIEmbeddings();
+
+    returnedEmbedddings = await embeddings.embedQuery(concatenatedJSON);
+    console.log(returnedEmbedddings);
+
+  }
+
 
   let { data, error } = await supabase.from("users").upsert([
     {
