@@ -37,7 +37,9 @@ export default async function Page({ params }: { params: any }) {
   const user = await response.json();
   const userId = user[0].id;
 
-  let similarityRes = await fetch("/api/comparison/supabase?user=" + userId);
+  let similarityRes = await fetch(
+    process.env.NEXT_PUBLIC_APP_URL + "/api/comparison/supabase?user=" + userId
+  );
   let similarity = await similarityRes.json();
 
   if (!slugEvent) {
