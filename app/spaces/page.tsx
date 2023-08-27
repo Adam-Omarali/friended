@@ -43,7 +43,7 @@ export async function Page() {
           UserEvent: dataRes[0].events
         }}
       />
-    </div>
+    </body>
   );
 }
 
