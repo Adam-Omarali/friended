@@ -1,0 +1,343 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.image-container {
+    position: relative;
+  }
+  
+  .landing-image {
+    position: absolute;
+    top: 25vw; /* Position from top */
+    left: 65%; /* Position from left */
+    transform: translate(-50%, -50%); /* Center the image */
+    max-width: 100%; /* Ensure image doesn't exceed container */
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #8a2be2, #ff66b2);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Poppins;
+  }
+  
+  body.min-h-screen {
+    min-height: 100vh;
+  }
+  
+  .flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 20vw;
+    padding-left: 1vw; /* Add some spacing to the left */
+  }
+  
+  .login-link {
+    display: inline-block;
+    padding: 1vw 5vw; /* Make the button larger */
+    border-radius: 2vw;
+    text-decoration: none;
+    background-color: #f8f8f8;
+    color: #DA9CDF;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 2vw;
+    margin-left: 10vw; 
+    font-size: 2vw;
+    font-weight: bolder;/* Add space below the middle */
+  }
+
+  .product-name {
+    color: #f8f8f8;
+    font-size: 5vw;
+    font-weight: bolder;
+    margin-bottom: 2vw;
+  }
+
+  .product-description {
+    color: #f8f8f8;
+    font-size: 2vw;
+    font-weight: bolder;
+  }
+  
+  .login-link:hover {
+    background-color: #DA9CDF;
+    color: #ffffff;
+  }
+  
+
+  #topRight{
+    margin-left: 55vw;
+  }
+
+  #matchPercent{
+    text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
+  .match:hover{
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05, 1.05);
+  }
+ 
+  #profileCard{
+    margin-left:15vw;
+  }
+
+  #topRightProfile{
+    margin-left:65vw;
+  }
+
+  #topRightCorrelation{
+    margin-left:65vw;
+  }
+  
+  #topRightSpaces{
+    margin-left:65vw;
+  }
+  
+  #resultsList{
+    
+    width:100%;
+    background-color:white;
+    border-radius:1vw;
+    margin-top:1rem;
+    max-height:300px;
+    overflow-y:scroll;
+}
+
+#searchResult{
+    padding:10px 20px;
+    background-color: white;
+    color:black;
+    cursor:pointer;
+}
+
+.searchInput {
+  padding: 1vw;
+  border: none;
+  border-radius: 2vw 0 0 2vw;
+  background-color: transparent;
+  font-size: 1.8vw;
+  color: #333;
+  outline: none;
+  width: 80vw; /* Adjusted width */
+}
+
+.searchButton {
+  padding: 1vw 2vw;
+  border: none;
+  border-radius: 0 2vw 2vw 0;
+  background-color: #DA9CDF;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #C875B8;
+}
+
+
+
+.searchContainer {
+  position: absolute;
+  top: 10vw;
+  right: 16vw;
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 2rem;
+  overflow: hidden;
+  z-index:1000;
+}
+
+.searchInput {
+  padding: 0.5vw;
+  border: none;
+  border-radius: 1vw 0 0 1vw;
+  background-color: transparent;
+  font-size: 2vw;
+  color: #333;
+  outline: none;
+  width: 60vw;
+}
+
+.searchButton {
+  padding: 1vw 2vw;
+  border: none;
+  border-radius: 0 2vw 2vw 0;
+  background-color: #DA9CDF;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #C875B8;
+}
+
+
+.space-container {
+  text-align: center;
+  margin-top: 20vw;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-image {
+  position: absolute;
+  top: 1vw; /* Adjust top position */
+  right: 4vw; /* Adjust right position */
+}
+/* correlation.css */
+.space {
+  display: grid; /* Use CSS Grid for the layout */
+  grid-template-rows: auto 1fr; /* Divide the grid into two rows */
+  align-items: center;
+  background-color: #DFCD9C;
+  border-radius: 2.5vw;
+  padding: 3vw;
+  margin-right: 4vw;
+  margin-top: 3vw;
+  width: 50vw;
+  height: 40vw; 
+}
+
+.space:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05, 1.05);
+}
+
+.participants{
+  font-size:5vw;
+  color:#C875B8;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.space-description{
+  margin-top:-5vw;
+  overflow: hidden;
+}
+
+.space-name{
+  color:white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.public{
+  font-size:2vw;
+}
+
+#organizerName{
+  color:purple;
+}
+
+#customButton:hover{
+  background-color:beige;
+}
+
+.container {
+  text-align: center;
+}
+.toggle-switch {
+  position: relative;
+  width: 75px;
+  display: inline-block;
+  text-align: left;
+  top: 8px;
+}
+.checkbox {
+  display: none;
+}
+.label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+}
+.inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.inner:before,
+.inner:after {
+  float: left;
+  width: 50%;
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  color: #fff;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.inner:before {
+  content: "YES";
+  padding-left: 10px;
+  background-color: #060;
+  color: #fff;
+}
+.inner:after {
+  content: "NO";
+  padding-right: 10px;
+  background-color: #bbb;
+  color: #fff;
+  text-align: right;
+}
+.switch {
+  display: block;
+  width: 24px;
+  margin: 5px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 40px;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+.checkbox:checked + .label .inner {
+  margin-left: 0;
+}
+.checkbox:checked + .label .switch {
+  right: 0px;
+}
+
+#privateText{
+  color:white;
+}
+
+#eventName{
+  color:purple;
+}
+
+#info{
+  width:200%;
+  margin-left:-10vw;
+}
+
+#userMessage{
+  margin-left:7vw;
+  margin-top:2vw;
+  color:white;
+  font-size:xx-large;
+}
+
+#users{
+  margin-left:5vw;
+}
