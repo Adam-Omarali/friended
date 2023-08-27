@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { getSession, useSession } from "next-auth/react";
 import { useState } from "react";
-
+import Link from "next/link";
 interface AddUserButtonProps {
   eventId: any;
 }
@@ -15,6 +15,8 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
   const [isFail, setIsFail] = useState(false);
   const existingParticipant = eventId.participant;
   const newParticipant = eventId.newParticipant;
+  const existingEvents = eventId.userEvents;
+  console.log(existingEvents);
   const spacePassword = eventId.password;
   const isPublic = eventId.public;
 
@@ -47,7 +49,7 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ eventId, existingParticipant, newParticipant }),
+      body: JSON.stringify({ eventId, existingParticipant, newParticipant, existingEvents }),
     });
   
     setInputValue("");
@@ -69,7 +71,12 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
         </div>
       )}
 
-      <Button className="text-lightpink font-black  text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight mt-5" onClick={()=>addUser(newParticipant)}>Join Event</Button>
+      {!existingParticipant.includes(newParticipant)?<Button className="text-lightpink font-black  text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight mt-5" onClick={()=>addUser(newParticipant)}>Join Event</Button>:<a
+          href={`/spaces/${eventId.id}`} // Set the href for the anchor tag
+          className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl py-2 px-3 leading-tight mt-5"
+        >
+          View Event
+        </a>}
       {isFail && (
         <p className="error-message">Password incorrect, please try again!</p>
       )}

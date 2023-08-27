@@ -23,7 +23,7 @@ export async function Page() {
   const { data: userInfo } = await supabase.from("users").select();
   const response = await GET();
   const dataRes = await response.json();
-  console.log(dataRes);
+  //console.log(dataRes);
   return (
     <div className="w-full flex-center min-h-screen">
       <div className="">
@@ -38,7 +38,8 @@ export async function Page() {
           spaceInfo: spaces,
           organizationInfo: organizations,
           userInfo: userInfo,
-          newUserId: dataRes[0].id
+          newUserId: dataRes[0].id,
+          UserEvent: dataRes[0].events
         }}
       />
     </div>

@@ -7,7 +7,6 @@ import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import ToggleSwitch from "./switch";
 import "../../styles.css";
-import { GETClient } from "../../api/auth/getUserClient/route";
 
 function CreateSpaceForm() {
   const [spaceName, setSpaceName] = useState("");
@@ -19,8 +18,6 @@ function CreateSpaceForm() {
   const [spaceChoiceMessage, setSpaceChoiceMessage] = useState("space type");
 
   async function addSpace() {
-    const data = await GETClient();
-    console.log(data);
     await fetch("/spaces/create/api", {
       method: "POST",
       body: JSON.stringify({
