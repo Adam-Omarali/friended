@@ -33,25 +33,27 @@
     font-weight: bolder;
   }
 
-  .description{
+  .description {
     position: absolute;
     top: 16vw; /* Adjust top position */
     left: 27vw; /* Adjust left position */
     color: #f8f8f8;
     font-size: 30px;
     font-weight: bolder;
+    z-index:1000;
   }
 
-.searchContainer {
+  .altdescription{
     position: absolute;
-    top: 16vw;
-    right: 27.5vw;
-    display: flex;
-    align-items: center;
-    background-color: #f8f8f8;
-    border-radius: 2rem;
-    overflow: hidden;
-}
+    top: 16vw; /* Adjust top position */
+    left: 30vw; /* Adjust left position */
+    color: #f8f8f8;
+    font-size: 30px;
+    font-weight: bolder;
+    z-index:1000;
+  }
+
+
 
 .searchInput {
     padding: 1vw;
@@ -78,49 +80,7 @@
     background-color: #C875B8;
 }
   
-  .profile-link:hover {
-    background-color: #DA9CDF;
-    color: #ffffff;
-  }
-
-  .connect-link {
-    position: absolute;
-    display: inline-block;
-    padding: 1vw 3vw; /* Make the button larger */
-    border-radius: 1.5vw;
-    right: 30vw;
-    top: 1vw;
-    text-decoration: none;
-    background-color: #f8f8f8;
-    color: #DA9CDF;
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 2vw;
-    font-weight: bolder;
-}
-
-.connect-link:hover {
-    background-color: #DA9CDF;
-    color: #ffffff;
-}
-.profile-link {
-    position: absolute;
-    display: inline-block;
-    padding: 1vw 3vw; /* Make the button larger */
-    border-radius: 1.5vw;
-    right: 13vw;
-    top: 1vw;
-    text-decoration: none;
-    background-color: #f8f8f8;
-    color: #DA9CDF;
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 2vw;
-    font-weight: bolder;
-}
-
-.profile-link:hover {
-    background-color: #DA9CDF;
-    color: #ffffff;
-}
+ 
 
 .searchContainer {
     position: absolute;
@@ -131,6 +91,7 @@
     background-color: #f8f8f8;
     border-radius: 2rem;
     overflow: hidden;
+    z-index:1000;
 }
 
 .searchInput {
@@ -177,7 +138,7 @@
     display: grid; /* Use CSS Grid for the layout */
     grid-template-rows: auto 1fr; /* Divide the grid into two rows */
     align-items: center;
-    background-color: #a3a1a1;
+    background-color: #DFCD9C;
     border-radius: 2.5vw;
     padding: 3vw;
     margin-right: 4vw;
@@ -207,13 +168,34 @@
 }
 
 .match-name {
-    color: #f8f8f8;
+    color: black;
     font-size: 2vw;
     font-weight: bolder;
 }
 
 .match-percentage {
-    color: #DA9CDF;
+    color: #cc3583;
     font-size: 2vw;
     font-weight: bolder;
 }
+
+#spaceSearch{
+    width:30vw;
+    margin-left:30vw;
+    
+}
+
+#spacesList{
+    margin-left:30vw;
+    background-color:white;
+    border-radius:1vw;
+    margin-top:1rem;
+    max-height:300px;
+    overflow-y:scroll;
+}
+
+#searchResult{
+    z-index:-1;
+    width:30vw;
+}
+
