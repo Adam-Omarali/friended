@@ -44,7 +44,7 @@ export default async function Index() {
           <Link href="/" className="profile-link">
             profile.
           </Link>
-          <Link href="/" className="connect-link">
+          <Link href="/spaces" className="connect-link">
             connect.
           </Link>
           <div className="searchContainer">

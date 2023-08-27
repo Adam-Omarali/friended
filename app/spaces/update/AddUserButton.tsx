@@ -1,6 +1,7 @@
 "use client"
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import "../spaces.css";
 
 interface AddUserButtonProps {
   eventId: any;
@@ -12,6 +13,7 @@ export function AddUserButton({eventId}: AddUserButtonProps) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isFail, setIsFail] = useState(false);
   const existingParticipant = eventId.participant;
+  const newParticipant = eventId.newParticipant;
   const spacePassword = eventId.password;
   const isPublic = eventId.public;
 
@@ -21,7 +23,7 @@ export function AddUserButton({eventId}: AddUserButtonProps) {
     setIsValid(newValue === spacePassword);
   };
 
-  const addUser = async () => {
+  const addUser = async (newParticipant:any) => {
     if(!isPublic && !isValid){
       setIsFail(true);
       setIsSuccess(false);
@@ -32,7 +34,7 @@ export function AddUserButton({eventId}: AddUserButtonProps) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ eventId, existingParticipant }),
+      body: JSON.stringify({ eventId, existingParticipant, newParticipant }),
     });
     setInputValue("")
     const data = await response.json();
@@ -48,7 +50,7 @@ export function AddUserButton({eventId}: AddUserButtonProps) {
         onChange={handleInputChange}
         placeholder="Enter password"
       />}
-      <Button onClick={addUser}>Join Event</Button>
+      <button onClick={() => addUser(newParticipant)} className="join-button">Join Event</button>
       {isFail&&<p className="error-message">Password incorrect, please try again!</p>}
       {isSuccess&&<p className="success-message">You have been added to the space!</p>}
     </div>

@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: Request) {
   const supabase = createServerComponentClient({ cookies });
   const { eventId } = await request.json(); 
-  const newParticipantId = "test"; 
+  const newParticipantId = eventId.newParticipant;
 
   const existingParticipantIds = eventId.participant||[];
   const updatedParticipantIds = [...existingParticipantIds, newParticipantId];
