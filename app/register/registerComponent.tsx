@@ -38,6 +38,8 @@ const RegisterComponent = ({ id, name }: { id: string; name: string }) => {
     setAccountChoiceMessage(value.placeholder);
   };
 
+  
+
   async function handleSignUp() {
     setLoading(true);
     await fetch("/register/api", {
@@ -108,7 +110,7 @@ const RegisterComponent = ({ id, name }: { id: string; name: string }) => {
               <input
                 className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
-                placeholder="your LinkedIn."
+                placeholder="LinkedIn. link"
                 onChange={(e) => setLinkedin(e.currentTarget.value)}
               />
               <span className="flex absolute right-0 bg-transparent rounded text-base text-gray-600 p-2">
@@ -124,7 +126,7 @@ const RegisterComponent = ({ id, name }: { id: string; name: string }) => {
               <input
                 className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
-                placeholder="your DevPost."
+                placeholder="Devpost link."
                 onChange={(e) => setDevpost(e.currentTarget.value)}
               />
               <span className="flex absolute right-0 bg-transparent rounded text-base text-gray-600 p-2">
