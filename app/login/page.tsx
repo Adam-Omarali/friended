@@ -1,65 +1,35 @@
-import Link from 'next/link'
-import Messages from './messages'
+import Link from 'next/link';
+import Messages from './messages';
+import './login.css'; // Import the new CSS file
+import '../styles.css';
 
 export default function Login() {
   return (
-    <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
-      <Link
-        href="/"
-        className="absolute left-8 top-8 py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
-        >
-          <polyline points="15 18 9 12 15 6" />
-        </svg>{' '}
-        Back
-      </Link>
-
-      <form
-        className="flex-1 flex flex-col w-full justify-center gap-2 text-foreground"
-        action="/auth/sign-in"
-        method="post"
-      >
-        <label className="text-md" htmlFor="email">
-          Email
-        </label>
-        <input
-          className="rounded-md px-4 py-2 bg-inherit border mb-6"
-          name="email"
-          placeholder="you@example.com"
-          required
-        />
-        <label className="text-md" htmlFor="password">
-          Password
-        </label>
-        <input
-          className="rounded-md px-4 py-2 bg-inherit border mb-6"
-          type="password"
-          name="password"
-          placeholder="••••••••"
-          required
-        />
-        <button className="bg-green-700 rounded px-4 py-2 text-white mb-2">
-          Sign In
-        </button>
-        <button
-          formAction="/auth/sign-up"
-          className="border border-gray-700 rounded px-4 py-2 text-black mb-2"
-        >
-          Sign Up
-        </button>
-        <Messages />
-      </form>
-    </div>
+    <body  className="flex justify-center items-center h-screen">
+          <div className="h-screen items-center justify-center w-full max-w-xs">
+            <h1 className="text-white body-font font-poppins text-7xl font-black mt-20 mb-5" >friended.</h1>
+            <form className="rounded px-8 pt-6 pb-8 mb-4">
+            <div className=" flex relative w-500px h-48px group justify-center items-center z-1001 ">
+                <input className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="your email."/>
+                <span className="flex absolute right-0 bg-transparent rounded text-base text-gray-600 p-2">
+                  <img  src="https://assets.stickpng.com/thumbs/584856bce0bb315b0f7675ad.png" alt="linkedinlogo" width={25} height={25}/>
+                </span>
+            </div>  
+            <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
+                <input className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="your password."/>
+                <span className="flex absolute right-0 bg-transparent rounded text-base text-gray-600 p-2">
+                  <img  src="https://cdn-icons-png.flaticon.com/512/4091/4091030.png" alt="linkedinlogo" width={25} height={25}/>
+                </span>
+            </div>
+            
+            <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
+              <button className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/correlation">sign up.</Link></button>
+            </div>
+            <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
+              <button className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight"><Link href="/correlation">sign in.</Link></button>
+            </div>
+            </form>
+          </div>
+        </body>
   )
 }
