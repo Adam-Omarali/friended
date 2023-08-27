@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "../spaces.css";
 import { AddUserButton } from "./AddUserButton";
 
 interface SpaceProps {
@@ -67,7 +66,7 @@ export function Events({ spaces }: SpaceProps) {
                   participant: space.participantids,
                   public: space.public,
                   password: space.password,
-                  newParticipant: participantMock,
+                  // newParticipant: participantMock,
                 }}
               />
             </div>

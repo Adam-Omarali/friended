@@ -6,7 +6,8 @@ import Link from "next/link";
 import profile from "../img/profile.png";
 import { GET } from "../api/auth/getUserId/route";
 import React from "react";
-import "./spaces.css";
+import '../styles.css';
+
 
 interface space {
   id: string;

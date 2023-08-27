@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
 import ToggleSwitch from "./switch";
 import "../../styles.css";
 import { GETClient } from "../../api/auth/getUserClient/route";
