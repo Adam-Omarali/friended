@@ -16,7 +16,7 @@ interface space {
   password: string;
 }
 
-export async function Page() {
+export default async function Space() {
   const supabase = createServerComponentClient({ cookies });
   const { data: spaces } = await supabase.from("events").select();
   const { data: organizations } = await supabase.from("organizations").select();
@@ -59,5 +59,3 @@ export async function Page() {
     </div>
   );
 }
-
-export default Page;
