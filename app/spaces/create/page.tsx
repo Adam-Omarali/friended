@@ -47,27 +47,20 @@ function CreateSpaceForm() {
   ];
 
   function handleChoices() {
+    console.log('ic');
     if (publicSpace){
       setPublicSpace(false);
       setSpaceChoice('private');
+      console.log('private')
     }
     else{
       setPublicSpace(true);
       setSpaceChoice('public');
+      console.log('public');
     }
-    setDropDisplay(!dropDisplay);
   }
 
-  const handleSelection = (value: any) => {
-    setSpaceChoice(value.name);
-    if (value.name === "public") {
-      setPublicSpace(true);
-    } else {
-      setPublicSpace(false);
-    }
-    setDropDisplay(false);
-    setSpaceChoiceMessage(value.displayName);
-  };
+  
 
   return (
     <div className="flex justify-center items-center h-screen">
@@ -91,46 +84,16 @@ function CreateSpaceForm() {
             onChange={(e) => setDescription(e.currentTarget.value)}
           />
         </div>
-        {/* <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-1">
-          <input
-            className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-            type="text"
-            placeholder={spaceChoiceMessage}
-          />
-          <span className="cursor-pointer flex absolute right-0 bg-transparent rounded text-base text-gray-600 p-2">
-            <img
-              onClick={handleChoices}
-              src="https://static.thenounproject.com/png/3012911-200.png"
-              alt="linkedinlogo"
-              width={25}
-              height={25}
-            />
-          </span>
-        </div>
-        <div
-          className=" relative w-500px h-48px group justify-center items-center z-1001 mt-7 mb-2"
-          id="resultsList"
-        >
-          {dropDisplay ? (
-            spaceOptions.map((result, id) => {
-              return (
-                <div
-                  id="searchResult"
-                  key={id}
-                  onClick={() => {
-                    handleSelection(result);
-                  }}
-                >
-                  {result.displayName}
-                </div>
-              );
-            })
-          ) : (
-            <h1></h1>
-          )}
-        </div> */}
-        <div onClick = {()=>{handleChoices}}>
-          <ToggleSwitch label="Private" />
+        <div className="container">
+          <strong id="privateText">{"Private"}</strong>{"  "}
+          <div className="toggle-switch" >
+            <input onClick={()=>{handleChoices()}}  type="checkbox" className="checkbox" 
+                  name={"Private"} id={"Private"} />
+            <label className="label" htmlFor={"Private"} >
+              <span className="inner" />
+              <span className="switch" />
+            </label>
+          </div>
         </div>
         {spaceChoice === "private" ? (
           <div>
@@ -139,7 +102,7 @@ function CreateSpaceForm() {
                 onChange={(e) => setPassword(e.currentTarget.value)}
                 className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                 type="password"
-                placeholder="password."
+                placeholder="space password."
               />
               <span className="flex absolute right-0 bg-transparent rounded text-base text-gray-600 p-2">
                 <img
