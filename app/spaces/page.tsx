@@ -4,8 +4,8 @@ import { Events } from "./update/Events";
 import Image from "next/image";
 import Link from "next/link";
 import profile from "../img/profile.png";
-import {GET} from "../api/auth/getUserId/route";
-import React from 'react';
+import { GET } from "../api/auth/getUserId/route";
+import React from "react";
 import "./spaces.css";
 
 interface space {
@@ -27,26 +27,33 @@ export async function Page() {
   const dataRes = await response.json();
   console.log(dataRes);
   return (
-      <body className="body">
-        <div className="container">
-          <div className="profile-image">
-            <Image src={profile} alt="Profile Picture" width={75} height={75} />
-          </div>
-          <h1 className="product-name">friended.</h1>
-          <h2 className="events">Events</h2>
+    <body className="w-full flex-center min-h-screen">
+      <div className="">
+        <h1 className="text-white body-font font-poppins text-5xl font-black top-7 mb-5 absolute left-0 top-0 w-16 h-16 ml-10">
+          friended.
+        </h1>
+        <div
+          id="topRightProfile"
+          className="flex absolute top-5  w-16 h-16 ml-10"
+        >
+          <button className=" text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight">
+            <Link href="/profile">profile.</Link>
+          </button>
+          <img
+            className=" w-50 h-50 ml-5 rounded-full "
+            src="https://wallpapers.com/images/featured/minimalist-7xpryajznty61ra3.jpg"
+            alt="Rounded avatar"
+          ></img>
         </div>
-        <Events
-          spaces={{
-            spaceInfo: spaces,
-            organizationInfo: organizations,
-            userInfo: userInfo,
-            newUserId: dataRes.length>0? dataRes[0].id : ""
-          }}
-        />
-        <Link href={`/spaces/create`}>
-          Go to create
-        </Link>
-      </body>
+      </div>
+      <Events
+        spaces={{
+          spaceInfo: spaces,
+          organizationInfo: organizations,
+          userInfo: userInfo,
+        }}
+      />
+    </body>
   );
 }
 

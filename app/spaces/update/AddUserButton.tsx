@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { getSession, useSession } from "next-auth/react";
 import { useState } from "react";
-import "../spaces.css";
 
 interface AddUserButtonProps {
   eventId: any;
@@ -69,14 +68,15 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
   return (
     <div className="password-input">
       {!isPublic && (
-        <input
-          type="password"
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder="Enter password"
-        />
+        <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
+            <input value={inputValue} onChange={handleInputChange} className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"  type="password" placeholder="password."/>
+            <span className="flex absolute right-0 bg-transparent rounded text-base text-gray-600 p-2">
+              <img  src="https://cdn-icons-png.flaticon.com/512/4091/4091030.png" alt="linkedinlogo" width={25} height={25}/>
+            </span>
+        </div>
       )}
-      <Button onClick={()=>addUser(newParticipant)}>Join Event</Button>
+
+      <Button className="text-lightpink font-black  text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight mt-5" onClick={()=>addUser(newParticipant)}>Join Event</Button>
       {isFail && (
         <p className="error-message">Password incorrect, please try again!</p>
       )}

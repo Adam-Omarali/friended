@@ -56,7 +56,7 @@ const handler = NextAuth({providers: [
                 return '/register?uid=' + user.id + '&name=' + user.name
             }
 
-            return true
+            return '/spaces'
         }
 }})
 
