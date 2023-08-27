@@ -54,9 +54,7 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
     const data = await response.json();
     setIsSuccess(true);
     setIsFail(false);
-    setIsDuplicateParticipant(false); 
-    
-    setIsDuplicateParticipant(false); // Reset the duplicate participant state
+    setIsDuplicateParticipant(false);  // Reset the duplicate participant state
     return data;
   };
   

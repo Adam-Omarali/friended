@@ -23,6 +23,7 @@ export async function Page() {
   const { data: userInfo } = await supabase.from("users").select();
   const response = await GET();
   const dataRes = await response.json();
+  console.log(dataRes);
   return (
     <div className="w-full flex-center min-h-screen">
       <div className="">
