@@ -10,7 +10,7 @@ interface SpaceProps {
 export function Events({ spaces }: SpaceProps) {
   const spaceInfo = spaces.spaceInfo;
   const organizationInfo = spaces.organizationInfo;
-  const participantMock = "test";
+  const newUserId = spaces.newUserId;
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredSpaces, setFilteredSpaces] = useState(spaceInfo);
@@ -96,7 +96,7 @@ export function Events({ spaces }: SpaceProps) {
                     participant: space.participantids,
                     public: space.public,
                     password: space.password,
-                    newParticipant: participantMock
+                    newParticipant: newUserId
                   }}
                 />
               </div>

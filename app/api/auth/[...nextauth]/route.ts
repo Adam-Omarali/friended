@@ -14,7 +14,7 @@ export const authOptions = {
     ],
     adapter: SupabaseAdapter({
         url: process.env.NEXT_PUBLIC_SUPABASE_URL ?? "",
-        secret: process.env.SUPABASE_SERVICE_ROLE_KEY ?? "",
+        secret: process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY ?? "",
     }) as Adapter,
     callbacks: {
         async signIn({ user }: {user: User}){
@@ -23,7 +23,6 @@ export const authOptions = {
 
             let {data: users} = await supabase.from("users").select().eq("id", user.id)
             firstSignIn = users?.length == 0
-
             if(firstSignIn){
                 console.log('signing in')
                 return '/register?uid=' + user.id + '&name=' + user.name
@@ -42,7 +41,7 @@ const handler = NextAuth({providers: [
     ],
     adapter: SupabaseAdapter({
         url: process.env.NEXT_PUBLIC_SUPABASE_URL ?? "",
-        secret: process.env.SUPABASE_SERVICE_ROLE_KEY ?? "",
+        secret: process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY ?? "",
     }) as Adapter,
     callbacks: {
         async signIn({ user }: {user: User}){
