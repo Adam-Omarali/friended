@@ -1,9 +1,7 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { Events } from "./update/Events";
-import Image from "next/image";
 import Link from "next/link";
-import profile from "../img/profile.png";
 import { GET } from "../api/auth/getUserId/route";
 import React from "react";
 import "../styles.css";
@@ -25,7 +23,6 @@ export async function Page() {
   const { data: userInfo } = await supabase.from("users").select();
   const response = await GET();
   const dataRes = await response.json();
-  console.log(dataRes);
   return (
     <div className="w-full flex-center min-h-screen">
       <div className="">
@@ -54,6 +51,7 @@ export async function Page() {
           spaceInfo: spaces,
           organizationInfo: organizations,
           userInfo: userInfo,
+          newUserId: dataRes[0].id
         }}
       />
     </div>

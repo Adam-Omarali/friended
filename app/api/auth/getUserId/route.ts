@@ -20,9 +20,7 @@ export async function GET(){
     const {data, error} = await supabase.from("users").select('id').eq('email', session?.user?.email)
     if(data && data.length > 0){
         const {data: dataPublic} = await supabasePublic.from("users").select().eq('id', data[0].id)
-        //console.log(dataPublic);
         return NextResponse.json(dataPublic)      
     }
     return NextResponse.error()
-
 }
