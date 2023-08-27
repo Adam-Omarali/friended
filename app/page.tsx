@@ -9,7 +9,6 @@ import { signIn, useSession } from "next-auth/react";
 
 export const dynamic = "force-dynamic";
 export default function Index() {
-  const { data: session } = useSession();
   // if (session) {
   //   return <div>{session.user?.name}</div>;
   // }
