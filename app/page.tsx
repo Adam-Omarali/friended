@@ -32,8 +32,6 @@ export default function Index() {
           <Image
             src={landingImg}
             alt="Image"
-            //width={700}
-            //height={700}
             className="landing-image"
           />
         </div>

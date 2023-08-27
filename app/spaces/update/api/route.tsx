@@ -16,7 +16,6 @@ export async function POST(request: Request) {
     .eq('id', eventId.id);
 
   if (error) {
-    console.log(error);
     return NextResponse.error();
   }
 

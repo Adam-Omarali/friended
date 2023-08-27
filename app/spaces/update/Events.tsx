@@ -39,8 +39,8 @@ export function Events({spaces}: SpaceProps) {
       <div className="flex-container">
         {filteredSpaces?.map((space: any) => {
           const organizer = organizationInfo.find(
-            (org: any) => org.id === space.organizationid
-          );
+              (org: any) => org.id== space.organizationid
+            );
           return (
             <div className="space-container" key={space.id}>
                 <div className="header">
@@ -51,7 +51,7 @@ export function Events({spaces}: SpaceProps) {
                   </p>
                   <p className="public">{space.public===true?"Public Event":"Private Event"}</p>
                   <p className="organizer">
-                    Organized by {organizer ? organizer[0].name : ""}
+                    Organized by {organizer ? organizer.name: ""}
                   </p>
                 </div>
                 <p className="space-description">{space.description}</p>

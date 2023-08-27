@@ -5,7 +5,6 @@ function OnBoard({
 }: {
   searchParams?: { uid: string; name: string; email: string };
 }) {
-  console.log(searchParams);
   return <div>OnBoard</div>;
 }
 

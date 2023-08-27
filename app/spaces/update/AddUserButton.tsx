@@ -31,7 +31,6 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
       setIsSuccess(false);
       return;
     }
-    console.log(session);
     const response = await fetch("/spaces/update/api", {
       method: "POST",
       headers: {
@@ -55,7 +54,7 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
           placeholder="Enter password"
         />
       )}
-      <Button onClick={addUser}>Join Event</Button>
+      <Button onClick={()=>addUser(newParticipant)}>Join Event</Button>
       {isFail && (
         <p className="error-message">Password incorrect, please try again!</p>
       )}

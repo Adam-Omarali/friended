@@ -19,8 +19,8 @@ export async function Page() {
   const supabase = createServerComponentClient({ cookies });
 
   const { data: spaces} = await supabase.from("events").select();
-  const { data: organizations} = await supabase.from("organizations").select("name")
-
+  const { data: organizations} = await supabase.from("organizations").select()
+  const { data: userInfo} = await supabase.from("users").select();
   return (
     <body className="body">
       <div className="container">
@@ -29,8 +29,8 @@ export async function Page() {
         </div>
         <h1 className="product-name">friended.</h1>
         <h2 className="events">Events</h2>
-        </div>
-        <Events spaces={{spaceInfo:spaces, organizationInfo: organizations}}/>
+      </div>
+      <Events spaces={{spaceInfo:spaces, organizationInfo: organizations, userInfo: userInfo}}/>
     </body>
   );
 }
