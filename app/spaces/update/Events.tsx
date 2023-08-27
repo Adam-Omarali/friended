@@ -32,7 +32,7 @@ export function Events({spaces}: SpaceProps) {
             <input
             type="text"
             className="searchInput"
-            placeholder="Search by event name"
+            placeholder="search by event name."
             onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button className="searchButton">Search</button>
@@ -49,7 +49,7 @@ export function Events({spaces}: SpaceProps) {
               <p className="text-2xl">
                     <p className="participants mb-5">{space.participantids ? space.participantids.length : 0}{" "}</p>Participants
               </p>
-              <p className="space-description">{space.description}</p>
+              <p className="space-description">{space.description} </p>
               <p className="public">{space.public===true?"Public Event":"Private Event"}</p>
               <p className="organizer">
                 Organized by <strong id="organizerName">{organizer ? organizer.name: ""}</strong>

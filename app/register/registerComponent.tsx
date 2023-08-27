@@ -145,6 +145,7 @@ const RegisterComponent = ({ id, name }: { id: string; name: string }) => {
 
         <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
           <button
+            id="customButton" 
             className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl py-2 px-3 leading-tight"
             onClick={async () => await handleSignUp()}
           >
