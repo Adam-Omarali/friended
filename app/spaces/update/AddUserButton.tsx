@@ -12,12 +12,12 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
   const [inputValue, setInputValue] = useState("");
   const [isValid, setIsValid] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isDuplicateParticipant, setIsDuplicateParticipant] = useState(false);
   const [isFail, setIsFail] = useState(false);
   const existingParticipant = eventId.participant;
   const newParticipant = eventId.newParticipant;
   const spacePassword = eventId.password;
   const isPublic = eventId.public;
-  const session = getSession();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
@@ -25,14 +25,22 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
     setIsValid(newValue === spacePassword);
   };
 
-  const addUser = async (newParticipant:any) => {
+  const addUser = async (newParticipant: any) => {
     setIsFail(false);
     setIsSuccess(false);
-    if(!isPublic && !isValid){
+    setIsDuplicateParticipant(false); 
+    if (!isPublic && !isValid) {
       setIsFail(true);
-      setIsSuccess(false);
       return;
     }
+  
+    if (existingParticipant.includes(newParticipant)) {
+      setIsFail(false);
+      setIsSuccess(false);
+      setIsDuplicateParticipant(true); // New state to handle duplicate participant message
+      return;
+    }
+  
     const response = await fetch("/spaces/update/api", {
       method: "POST",
       headers: {
@@ -40,13 +48,24 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
       },
       body: JSON.stringify({ eventId, existingParticipant, newParticipant }),
     });
+  
     setInputValue("");
     const data = await response.json();
-    setIsSuccess(true);
-    setIsFail(false);
-    console.log("yo yo yo")
+    
+    if (data.success) {
+      setIsSuccess(true);
+      setIsFail(false);
+      setIsDuplicateParticipant(false); 
+    } else {
+      setIsDuplicateParticipant(false); 
+      setIsSuccess(false);
+      setIsFail(true);
+    }
+    
+    setIsDuplicateParticipant(false); // Reset the duplicate participant state
     return data;
   };
+  
   return (
     <div className="password-input">
       {!isPublic && (
@@ -63,6 +82,9 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
       )}
       {isSuccess && (
         <p className="success-message">You have been added to the space!</p>
+      )}
+      {isDuplicateParticipant && (
+        <p className="error-message">Participant already exists in the space!</p>
       )}
     </div>
   );
