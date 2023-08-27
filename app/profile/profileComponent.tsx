@@ -21,7 +21,7 @@ const ProfileComponent = () => {
         setSocialChoiceMessage(value.placeholder);
     }
 
-    const skills=['Javascript','React','Node.js','Tailwind CSS'];
+  const skills=['Javascript','React','Node.js','Tailwind CSS'];
   const interests=['Web Development','UI/UX Design','Blockchain','Data Science']
   const experiences=['Frontend Developer at Ignition (3 years)','Software Engineer at Ignition (2 years)'];
 

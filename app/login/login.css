@@ -4,11 +4,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: cent   er;
-    min-height: 47.85vw;
+    justify-content: center;
+    min-height: 50vw;
     position: relative;
-    background: linear-gradient(135deg, #8a2be2, #ff66b2);
-    font-family: Poppins;
+    
     text-align: center; /* Adjusted max-width value */
     margin: 0 auto;
   }
