@@ -7,7 +7,7 @@ import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import ToggleSwitch from "./switch";
 import "../../styles.css";
-import { GETClient } from "../../api/auth/getUserClient/route";
+import { GET } from "../../api/auth/getUserClient/route";
 import Link from "next/link";
 
 function CreateSpaceForm() {
