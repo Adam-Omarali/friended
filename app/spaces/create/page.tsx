@@ -14,7 +14,6 @@ function CreateSpaceForm() {
   const [password, setPassword] = useState("");
   
   async function addSpace() {
-    console.log("first");
     const data = await GETClient();
     console.log(data);
     await fetch("/spaces/create/api", {
