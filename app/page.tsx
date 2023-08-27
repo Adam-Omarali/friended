@@ -27,7 +27,7 @@ export default function Index() {
               Connect with hackers <br />
               and fellow enthusiasts.
             </h2>
-            <Button onClick={() => signIn("google")}>login with google.</Button>
+            <Button className="text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  py-2 px-3 leading-tight mt-5"  onClick={() => signIn("google")}>login with google.</Button>
           </div>
           <Image
             src={landingImg}
