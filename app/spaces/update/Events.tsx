@@ -9,8 +9,10 @@ interface SpaceProps {
 export function Events({ spaces }: SpaceProps) {
   const spaceInfo = spaces.spaceInfo;
   const organizationInfo = spaces.organizationInfo;
+  const userInfo = spaces.userInfo;
   const newUserId = spaces.newUserId;
-
+  const curEvents = spaces.UserEvent;
+  //console.log(userInfo);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredSpaces, setFilteredSpaces] = useState(spaceInfo);
 
@@ -29,7 +31,7 @@ export function Events({ spaces }: SpaceProps) {
     <div>
       
         <div className="searchContainer">
-            <input
+          <input
             type="text"
             className="searchInput"
             placeholder="search by event name."
@@ -53,7 +55,9 @@ export function Events({ spaces }: SpaceProps) {
                 Participants
               </p>
               <p className="space-description">{space.description} </p>
-              <p className="public">{space.public===true?"Public Event":"Private Event"}</p>
+              <p className="public">
+                {space.public === true ? "Public Event" : "Private Event"}
+              </p>
               <p className="organizer">
                 Organized by{" "}
                 <strong id="organizerName">
@@ -65,8 +69,9 @@ export function Events({ spaces }: SpaceProps) {
                   id: space.id,
                   participant: space.participantids,
                   public: space.public,
+                  userEvents: curEvents,
                   password: space.password,
-                  // newParticipant: participantMock,
+                  newParticipant: newUserId,
                 }}
               />
             </div>

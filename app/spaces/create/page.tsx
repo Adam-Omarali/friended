@@ -20,8 +20,6 @@ function CreateSpaceForm() {
   const [spaceChoiceMessage, setSpaceChoiceMessage] = useState("space type");
 
   async function addSpace() {
-    const data = await GETClient();
-    console.log(data);
     await fetch("/spaces/create/api", {
       method: "POST",
       body: JSON.stringify({

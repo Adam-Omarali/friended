@@ -1,13 +1,10 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { Events } from "./update/Events";
-import Image from "next/image";
 import Link from "next/link";
-import profile from "../img/profile.png";
 import { GET } from "../api/auth/getUserId/route";
 import React from "react";
-import '../styles.css';
-
+import "../styles.css";
 
 interface space {
   id: string;
@@ -26,7 +23,7 @@ export async function Page() {
   const { data: userInfo } = await supabase.from("users").select();
   const response = await GET();
   const dataRes = await response.json();
-  console.log(dataRes);
+  //console.log(dataRes);
   return (
     <body className="w-full  min-h-screen">
       <div className="">
@@ -36,18 +33,17 @@ export async function Page() {
           <button id="customButton" className=" text-lightpink font-black text-3xl font-poppins bg-white rounded-2xl  ml-5 py-2 px-3 leading-tight"><Link href="/correlation">connect.</Link></button>
           <img className=" w-50 h-50 ml-5 rounded-full " src="https://wallpapers.com/images/featured/minimalist-7xpryajznty61ra3.jpg" alt="Rounded avatar"></img>
         </div>
-      
-      <div >
-        <Events
-          spaces={{
-            spaceInfo: spaces,
-            organizationInfo: organizations,
-            userInfo: userInfo,
-          }}
-        />
       </div>
-      </div>
-    </body>
+      <Events
+        spaces={{
+          spaceInfo: spaces,
+          organizationInfo: organizations,
+          userInfo: userInfo,
+          newUserId: dataRes[0].id,
+          UserEvent: dataRes[0].events
+        }}
+      />
+    </div>
   );
 }
 
