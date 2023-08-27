@@ -71,20 +71,16 @@ const ProfileComponent = () => {
         </div>
           <form className="rounded px-8 pt-6 pb-8 mb-4">
             <div className=" flex relative w-500px h-48px group justify-center items-center z-1001 ">
-                <input className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-lg font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="www.linkedin.com/in/jonathanshan1"/>
+                <input className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-lg font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="LinkedIn link."/>
                 <span className="flex absolute right-0 bg-transparent rounded text-base text-gray-600 p-2">
                   <img  src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedinlogo" width={25} height={25}/>
                 </span>
             </div>
             <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
-                <input className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-kg font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="devpost.com/JonnyACCI"/>
+                <input className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-kg font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Devpost link."/>
                 <span className="flex absolute right-0 bg-transparent rounded text-base text-gray-600 p-2">
                   <img  src="https://seeklogo.com/images/D/devpost-logo-95FF685C5D-seeklogo.com.png" alt="linkedinlogo" width={25} height={25}/>
                 </span>
-            </div>
-            <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-2xl cursor-pointer" htmlFor="file_input" >change pfp.</label>
-                <input className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-sm font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="file_input" type="file" placeholder="change pfp"/>
             </div>
             <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
                 <input className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-xl font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder={socialChoiceMessage}/>

@@ -138,20 +138,6 @@ const RegisterComponent = ({ id, name }: { id: string; name: string }) => {
                 />
               </span>
             </div>
-            <div className="flex relative w-500px h-48px group justify-center items-center z-1001 mt-7">
-              <label
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-2xl cursor-pointer"
-                htmlFor="file_input"
-              >
-                select pfp.
-              </label>
-              <input
-                className="drop-shadow-2xl bg-lightgray placeholder-lightpurple text-sm font-bold shadow appearance-none border rounded-2xl w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="file_input"
-                type="file"
-                placeholder="select pfp"
-              />
-            </div>
           </div>
         ) : (
           <h1></h1>
