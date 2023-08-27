@@ -25,6 +25,8 @@ export function Events({ spaces }: SpaceProps) {
       );
       setFilteredSpaces(filtered);
     }
+
+    console.log();
   }, [searchQuery, spaceInfo]);
 
   return (
@@ -75,72 +77,7 @@ export function Events({ spaces }: SpaceProps) {
             </div>
           );
         })}
-
-        {/* {filteredSpaces?.map((space: any) => {
-          const organizer = organizationInfo.find(
-              (org: any) => org.id== space.organizationid
-            );
-          return (
-            <div className="space-container" key={space.id}>
-                <div className="header">
-                  <h1 className="space-name">{space.name}</h1>
-                  <p className="participants">
-                    {space.participantids ? space.participantids.length : 0}{" "}
-                    Participants
-                  </p>
-                  <p className="public">{space.public===true?"Public Event":"Private Event"}</p>
-                  <p className="organizer">
-                    Organized by {organizer ? organizer.name: ""}
-                  </p>
-                </div>
-                <p className="space-description">{space.description}</p>
-                <AddUserButton
-                  eventId={{
-                    id: space.id,
-                    participant: space.participantids,
-                    public: space.public,
-                    password: space.password,
-                    newParticipant: newUserId
-                  }}
-                />
-              </div>
-          );
-        })} */}
       </div>
-      {/* <div className="flex-container">
-        {filteredSpaces?.map((space: any) => {
-          const organizer = organizationInfo.find(
-            (org: any) => org.id == space.organizationid
-          );
-          return (
-            <div className="space-container" key={space.id}>
-              <div className="header">
-                <h1 className="space-name">{space.name}</h1>
-                <p className="participants">
-                  {space.participantids ? space.participantids.length : 0}{" "}
-                  Participants
-                </p>
-                <p className="public">
-                  {space.public === true ? "Public Event" : "Private Event"}
-                </p>
-                <p className="organizer">
-                  Organized by {organizer ? organizer.name : ""}
-                </p>
-              </div>
-              <p className="space-description">{space.description}</p>
-              <AddUserButton
-                eventId={{
-                  id: space.id,
-                  participant: space.participantids,
-                  public: space.public,
-                  password: space.password,
-                  newParticipant: participantMock,
-                }}
-              />
-            </div>
-          );
-        })}
-      </div> */}
     </div>
   );
 }

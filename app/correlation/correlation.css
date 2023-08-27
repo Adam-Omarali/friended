@@ -120,16 +120,14 @@
 }
 
 .match-container {
-    margin-top:30vw;
-    /* top: 65%; Center vertically */
-    left: 51.5%; /* Center horizontally */
-    
-    display: flex;
-    
 
+    text-align: center;
+    margin-top:15vw;
     width: 100%;
+
+    display: flex;
     justify-content: center;
-    
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -141,15 +139,15 @@
 /* correlation.css */
 .match {
     display: grid; /* Use CSS Grid for the layout */
-    grid-template-rows: auto 1fr; /* Divide the grid into two rows */
-    align-items: center;
-    background-color: #DFCD9C;
-    border-radius: 2.5vw;
-    padding: 3vw;
-    margin-right: 4vw;
-    margin-top: 3vw;
-    width: 22vw;
-    height: 26vw;
+  grid-template-rows: auto 1fr; /* Divide the grid into two rows */
+  align-items: center;
+  background-color: #DFCD9C;
+  border-radius: 2.5vw;
+  padding: 3vw;
+  margin-right: 4vw;
+  margin-top: 3vw;
+  width: 22vw;
+  height: 26vw; 
 }
 
 .match-picture {
@@ -190,13 +188,14 @@
     
 }
 
-#spacesList{
+#searchList{
     margin-left:30vw;
     background-color:white;
     border-radius:1vw;
     margin-top:1rem;
     max-height:300px;
     overflow-y:scroll;
+    width:30%;
 }
 
 #searchResult{

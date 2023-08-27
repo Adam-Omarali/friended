@@ -105,8 +105,6 @@ export async function POST(request: Request) {
 
   if(!organization){
 
-    //   Get Linkedin Data and format it:
-
     //   Get profile id from Linkedin url
     const regexPattern = /\/in\/([^/]+)/;
     const match = regexPattern.exec(linkedin);
@@ -116,16 +114,16 @@ export async function POST(request: Request) {
         method: "POST",
         url: "https://linkedin-profiles-and-company-data.p.rapidapi.com/profile-details",
         headers: {
-        "content-type": "application/json",
-        "X-RapidAPI-Key": "73af45b8cbmshcad4f53f8eb3488p113aeajsn19a533b9cc62",
-        "X-RapidAPI-Host": "linkedin-profiles-and-company-data.p.rapidapi.com",
+          "content-type": "application/json",
+          "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+          "X-RapidAPI-Host": "linkedin-profiles-and-company-data.p.rapidapi.com",
         },
         data: {
-        profile_id: profileId,
-        profile_type: "personal",
-        contact_info: false,
-        recommendations: false,
-        related_profiles: false,
+          profile_id: profileId,
+          profile_type: "personal",
+          contact_info: false,
+          recommendations: false,
+          related_profiles: false,
         },
     };
 
