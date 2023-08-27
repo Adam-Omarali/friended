@@ -181,7 +181,8 @@ const CorrelationComponent = () => {
                 <div className="match-info">
                   <p className="match-name">{match.username}</p>
                   <p className="match-percentage">
-                    {match.similarity ? match.similarity.toFixed(2) : ""}% Match
+                    {match.similarity ? match.similarity.toFixed(2) * 100 : ""}%
+                    Match
                   </p>
                 </div>
               </div>
