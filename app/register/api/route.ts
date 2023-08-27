@@ -152,7 +152,7 @@ export async function POST(request: Request) {
     const embeddings = new OpenAIEmbeddings();
 
     returnedEmbedddings = await embeddings.embedQuery(concatenatedJSON);
-    console.log(returnedEmbedddings);
+    // console.log(returnedEmbedddings);
 
   }
 
