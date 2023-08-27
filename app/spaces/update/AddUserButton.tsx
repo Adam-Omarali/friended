@@ -26,6 +26,8 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
   };
 
   const addUser = async (newParticipant:any) => {
+    setIsFail(false);
+    setIsSuccess(false);
     if(!isPublic && !isValid){
       setIsFail(true);
       setIsSuccess(false);
@@ -42,6 +44,7 @@ export function AddUserButton({ eventId }: AddUserButtonProps) {
     const data = await response.json();
     setIsSuccess(true);
     setIsFail(false);
+    console.log("yo yo yo")
     return data;
   };
   return (
